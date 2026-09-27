@@ -1,4 +1,12 @@
-{{ 'section-image-banner.css' | asset_url | stylesheet_tag }}
+{%- comment -%}
+  Первая секция страницы — её CSS нужен для отрисовки LCP-картинки, поэтому preload:
+  иначе браузер находит файл только дойдя до секции (~82-я КБ HTML главной).
+{%- endcomment -%}
+{%- if section.index == 1 -%}
+  {{ 'section-image-banner.css' | asset_url | stylesheet_tag: preload: true }}
+{%- else -%}
+  {{ 'section-image-banner.css' | asset_url | stylesheet_tag }}
+{%- endif -%}
 
 {%- if section.settings.image_height == 'adapt' and section.settings.image != blank -%}
   {%- style -%}
