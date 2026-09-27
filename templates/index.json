@@ -1,0 +1,690 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_banner_PrcWJW": {
+      "type": "image-banner",
+      "blocks": {
+        "text_cpajJ3": {
+          "type": "text",
+          "settings": {
+            "text": "Tallos frescos de productores seleccionados en Colombia, Ecuador y flores de estación. Elige las variedades y cantidades que quieras y crea tu propia composición",
+            "text_style": "body"
+          }
+        },
+        "heading_qYFjbj": {
+          "type": "heading",
+          "settings": {
+            "heading": "FLORES FRESCAS SIN ESCALAS",
+            "heading_size": "hxl"
+          }
+        },
+        "buttons_XVyfng": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Ver todo",
+            "button_link_1": "shopify://collections/todos-los-productos",
+            "button_style_secondary_1": false,
+            "button_label_2": "Comprar por categorías",
+            "button_link_2": "shopify://pages/compra-por-colecciones",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "text_cpajJ3",
+        "heading_qYFjbj",
+        "buttons_XVyfng"
+      ],
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/156789_da7bea5b-4dfb-445d-93ad-19833e07745d.png",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-left",
+        "desktop_content_alignment": "left",
+        "show_text_box": false,
+        "color_scheme": "",
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
+        "show_text_below": false
+      }
+    },
+    "custom_liquid_q4W6mB": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<link href=\"https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap\" rel=\"stylesheet\">\n\n<style>\n  #vf-stage  { width: 100%; max-width: 900px; margin: 0 auto; }\n  #vf-stage svg { width: 100%; display: block; overflow: visible; }\n  .vf-label  { font-family: 'Montserrat', sans-serif; font-weight: 300; font-size: 14px; letter-spacing: 0.15em; fill: #373A36; }\n  .vf-subloc { font-family: 'Montserrat', sans-serif; font-weight: 300; font-size: 10px;  letter-spacing: 0.12em; fill: #A6AD9A; }\n</style>\n\n<div id=\"vf-stage\">\n<svg id=\"vf-svg\" xmlns=\"http://www.w3.org/2000/svg\" height=\"160\">\n\n  <path id=\"trail-fwd-dash\" fill=\"none\" stroke=\"#9B9B8A\" stroke-width=\"1.2\" stroke-dasharray=\"3 5\" opacity=\"0\" d=\"M 60 99.2 Q 75 -60.8 90 99.2\"></path>\n  <path id=\"trail-fwd-mask\" fill=\"none\" stroke=\"#F4EFE7\" stroke-width=\"2.5\" stroke-dasharray=\"0 99999\" opacity=\"0\" d=\"M 60 99.2 Q 75 -60.8 90 99.2\"></path>\n\n  <circle id=\"dot-bog-inner\" r=\"4\" fill=\"#CBA35C\" cx=\"60\" cy=\"99.2\"></circle>\n  <circle id=\"dot-bog-outer\" r=\"9\" fill=\"none\" stroke=\"#CBA35C\" stroke-width=\"0.8\" opacity=\"0.3\" cx=\"60\" cy=\"99.2\"></circle>\n  <text id=\"lbl-bog\" text-anchor=\"middle\" class=\"vf-label\" x=\"60\" y=\"119.2\">COLOMBIA</text>\n  <text id=\"sub-bog\" text-anchor=\"middle\" class=\"vf-subloc\" x=\"60\" y=\"132.2\">BOGOTÁ · BOG</text>\n\n  <circle id=\"dot-scl-inner\" r=\"4\" fill=\"#CBA35C\" cx=\"90\" cy=\"99.2\"></circle>\n  <circle id=\"dot-scl-outer\" r=\"9\" fill=\"none\" stroke=\"#CBA35C\" stroke-width=\"0.8\" opacity=\"0.3\" cx=\"90\" cy=\"99.2\"></circle>\n  <text id=\"lbl-scl\" text-anchor=\"middle\" class=\"vf-label\" x=\"90\" y=\"119.2\">CHILE</text>\n  <text id=\"sub-scl\" text-anchor=\"middle\" class=\"vf-subloc\" x=\"90\" y=\"132.2\">SANTIAGO · SCL</text>\n\n  <g id=\"plane-group\" opacity=\"0\">\n    <g transform=\"rotate(90) scale(0.055) translate(-385.33,-269.4)\">\n      <path fill-rule=\"evenodd\" fill=\"#3A3A3A\" d=\"m385.17 19.606c-12.956 0-19.174 42.81-21.377 62.881-0.45814 6.0887-0.97291 11.62-0.97291 17.301v60.503c-0.13431 3.447-0.73266 4.4038-2.7242 6.1388l-46.715 40.696c-3.1876 2.2042-7.3352 2.1224-7.018-5.4535v-5.4088c0-2.9806-2.3835-5.4088-5.3641-5.4088h-6.7051c-2.9806 0-5.4088 2.4282-5.4088 5.4088v31.72c0.0157 0.9701-0.15769 1.0512-0.84818 1.6652l-44.299 39.387c-4.5365 3.158-6.1986 0.0596-6.4369-5.4982v-9.8788c0-2.9806-2.3835-5.4088-5.3641-5.4088h-6.7051c-2.9806 0-5.4088 2.4282-5.4088 5.4088v32.855c-0.003 0.41191-0.17177 0.45043-0.35881 0.66367l-47.5 40.99c-3.0254 3.8715-4.8184 5.639-4.6936 12.203l-0.16908 18.425c-0.38261 2.5077 1.9576 3.506 3.6011 2.7174 0 0 81.135-50.093 112.25-63.828 31.118-13.735 72.594-23.155 72.594-23.155 3.1984-0.77396 6.0579-0.86459 7.2862 2.5479v138.61c0.0822 16.545 6.3324 26.555 0 32.497l-51.723 50.269c-3.1409 3.3487-4.9535 6.212-5.3209 11.623l0.0775 5.7259c0.17422 2.6789 1.1804 4.0556 3.6345 3.7399l66.157-16.266c1.7351-0.54805 3.1136-0.36124 4.3312 1.3216l6.7566 14.884 8.3025-15.269c1.147-1.6353 3.3026-2.4137 4.9265-1.8312 20.407 4.8326 40.813 9.6652 61.22 14.498 2.6255 0.31568 4.754 0.26075 5.0902-3.2619v-8.7427c-1.3742-6.0307-4.8403-8.8403-8.4759-12.469l-51.929-44.221c-4.8577-4.9235-0.0429-15.323 1.6092-32.006v-137.01l0.0446-0.0446h0.0446v-0.0446h0.0446v-0.0446h0.0446v-0.0446h0.0446c0.0402-0.19235 0.0865-0.39686 0.13403-0.58111 0.0473-0.18425 0.1233-0.36115 0.1788-0.53641 0.0555-0.17527 0.11458-0.32632 0.1788-0.4917 0.0642-0.16539 0.10499-0.33709 0.1788-0.49171 0.0738-0.15461 0.13918-0.30406 0.22351-0.447 0.0842-0.1429 0.17275-0.27191 0.2682-0.40231 0.0954-0.13045 0.20549-0.24064 0.3129-0.3576 0.10743-0.11701 0.23745-0.25499 0.35761-0.35761 0.12015-0.1027 0.22391-0.18079 0.3576-0.2682 0.13374-0.0874 0.29902-0.19691 0.44701-0.2682 0.148-0.0712 0.28391-0.12459 0.447-0.1788 0.16308-0.0544 0.35743-0.0978 0.53641-0.13403 0.17897-0.0363 0.34078-0.0718 0.5364-0.0894 0.19564-0.0176 0.41274-0.003 0.62581 0 0.21308 0.001 0.43921 0.022 0.67051 0.0446s0.4649 0.0453 0.71521 0.0894 37.656 8.1667 69.42 21.59 116.47 64.122 116.47 64.122c1.9402 0.39708 3.5766 0.10198 3.8233-1.8005v-17.129c0.11215-4.595-2.6072-8.6787-4.6042-10.505l-46.496-41.14c-1.6018-1.9478-1.959-2.322-2.0036-3.4734v-32.54c0-2.9806-2.4282-5.4088-5.4088-5.4088h-6.7051c-2.9806 0-5.3641 2.4282-5.3641 5.4088v9.8788c0.52057 5.8772-1.0437 8.0537-4.6936 5.2747l-45.61-39.17c-1.0202-0.87224-1.2586-0.91239-1.2459-1.7629v-31.625c0-2.9806-2.4282-5.4088-5.4088-5.4088h-6.7051c-2.9806 0-5.3641 2.4282-5.3641 5.4088v5.4088c0.75793 7.533-4.1895 9.0425-7.5097 5.4088l-46.401-40.749c-2.1631-1.9524-2.3669-3.1493-2.5904-5.8752v-60.668c-0.14-5.991-0.46-12.717-1.12-18.194-2.7-21.249-10.94-67.101-21.18-61.981z\"></path>\n    </g>\n  </g>\n</svg>\n</div>\n\n<script>\n(function() {\n  const CYCLE = 5000;\n  const FWD_START = 0.05, FWD_END = 0.75;\n  const FADE = 0.04;\n\n  const svg   = document.getElementById('vf-svg');\n  const plane = document.getElementById('plane-group');\n  const dashF = document.getElementById('trail-fwd-dash');\n  const maskF = document.getElementById('trail-fwd-mask');\n\n  const bogInner = document.getElementById('dot-bog-inner');\n  const bogOuter = document.getElementById('dot-bog-outer');\n  const lblBog   = document.getElementById('lbl-bog');\n  const subBog   = document.getElementById('sub-bog');\n  const sclInner = document.getElementById('dot-scl-inner');\n  const sclOuter = document.getElementById('dot-scl-outer');\n  const lblScl   = document.getElementById('lbl-scl');\n  const subScl   = document.getElementById('sub-scl');\n\n  const PAD_X = 60;\n  const ARC_H = 160;\n\n  let W = 0, H = 0;\n  let bogX, bogY, sclX, sclY;\n  let lenF = 0;\n  let ready = false;\n\n  function buildPaths() {\n    W = svg.clientWidth;\n    H = Math.max(160, W * 0.38);\n    svg.setAttribute('height', H);\n\n    bogX = PAD_X;\n    sclX = W - PAD_X;\n    bogY = sclY = H * 0.62;\n\n    const midX = W / 2;\n    const fwdD = `M ${bogX} ${bogY} Q ${midX} ${bogY - ARC_H} ${sclX} ${sclY}`;\n\n    dashF.setAttribute('d', fwdD);\n    maskF.setAttribute('d', fwdD);\n\n    lenF = dashF.getTotalLength();\n\n    [bogInner, bogOuter].forEach(el => { el.setAttribute('cx', bogX); el.setAttribute('cy', bogY); });\n    [sclInner, sclOuter].forEach(el => { el.setAttribute('cx', sclX); el.setAttribute('cy', sclY); });\n\n    const ly1 = bogY + 20, ly2 = bogY + 33;\n    lblBog.setAttribute('x', bogX); lblBog.setAttribute('y', ly1);\n    subBog.setAttribute('x', bogX); subBog.setAttribute('y', ly2);\n    lblScl.setAttribute('x', sclX); lblScl.setAttribute('y', ly1);\n    subScl.setAttribute('x', sclX); subScl.setAttribute('y', ly2);\n\n    maskF.style.strokeDasharray = lenF + ' 99999';\n    maskF.style.strokeDashoffset = 0;\n    ready = true;\n  }\n\n  function setMask(mask, len, traveled) {\n    const remaining = Math.max(0, len - traveled);\n    mask.style.strokeDasharray = remaining + ' 99999';\n    mask.style.strokeDashoffset = -traveled;\n  }\n\n  function easeInOut(t) {\n    return t < 0.5 ? 2*t*t : -1+(4-2*t)*t;\n  }\n\n  function fwdPath() {\n    return `M ${bogX} ${bogY} Q ${W/2} ${bogY - ARC_H} ${sclX} ${sclY}`;\n  }\n\n  let start = null;\n  function tick(ts) {\n    if (!ready) { requestAnimationFrame(tick); return; }\n    if (!start) start = ts;\n    const f = ((ts - start) % CYCLE) / CYCLE;\n\n    plane.style.opacity = 0;\n    dashF.style.opacity = 0;\n    maskF.style.opacity = 0;\n\n    if (f >= FWD_START && f < 1) {\n      const active = f < FWD_END;\n      const t = active ? (f - FWD_START) / (FWD_END - FWD_START) : 1;\n      const p = easeInOut(Math.min(t, 1));\n      const traveled = p * lenF;\n\n      let op = 1;\n      if (active && t < FADE) op = t / FADE;\n      else if (!active) op = Math.max(0, 1 - (f - FWD_END) / (1 - FWD_END));\n\n      setMask(maskF, lenF, traveled);\n      maskF.style.opacity = 1;\n      dashF.style.opacity = op;\n      plane.style.opacity = op;\n      plane.style.offsetPath = `path('${fwdPath()}')`;\n      plane.style.offsetDistance = (p * 100) + '%';\n    }\n\n    requestAnimationFrame(tick);\n  }\n\n  buildPaths();\n  window.addEventListener('resize', () => { ready = false; buildPaths(); });\n  requestAnimationFrame(tick);\n})();\n</script>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "rich_text_NdqaMY": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_dbQ4qz": {
+          "type": "heading",
+          "settings": {
+            "heading": "¿Qué tamaño de arreglo quieres crear?",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_dbQ4qz"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "1780058827aa4ae367": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_2457f4d_pNrBaU": {
+          "type": "ai_gen_block_2457f4d",
+          "name": "Collection list",
+          "settings": {
+            "columns_desktop": "4",
+            "columns_mobile": "1",
+            "image_ratio": "square",
+            "padding_top_desktop": 0,
+            "padding_bottom_desktop": 40,
+            "padding_top_mobile": 0,
+            "padding_bottom_mobile": 24,
+            "heading_font": "montserrat_n3",
+            "text_font": "montserrat_n3",
+            "collection_1": "tallos-cortos-30-50-cm",
+            "heading_1": "Pequeño",
+            "text_1": "(30-50 cm)",
+            "heading_size_1": "medium",
+            "text_size_1": "small",
+            "text_alignment_1": "center",
+            "collection_2": "tallos-medianos-50-70-cm",
+            "heading_2": "Mediano",
+            "text_2": "(50-70 cm)",
+            "heading_size_2": "medium",
+            "text_size_2": "small",
+            "text_alignment_2": "center",
+            "collection_3": "tallos-altos-70-90-cm",
+            "heading_3": "Grande",
+            "text_3": "(70-90 cm)",
+            "heading_size_3": "medium",
+            "text_size_3": "small",
+            "text_alignment_3": "center",
+            "collection_4": "tallos-xl-90-120-cm",
+            "heading_4": "Extra Grande",
+            "text_4": "(90–120 cm)",
+            "heading_size_4": "medium",
+            "text_size_4": "small",
+            "text_alignment_4": "center"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_2457f4d_pNrBaU"
+      ],
+      "name": "Collection list",
+      "settings": {}
+    },
+    "1780068513491070b0": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_a7795f6_4zUXgG": {
+          "type": "ai_gen_block_a7795f6",
+          "settings": {
+            "content": "<p>Vuelo Floral, un modelo directo - flores frescas sin pagar de más por diseño o empaque</p>",
+            "html_tag": "h2",
+            "font_size": 70,
+            "text_alignment": "center",
+            "text_color": "#373a36",
+            "line_height": 1,
+            "letter_spacing": 0,
+            "white_space": "normal",
+            "padding_top": 0,
+            "padding_bottom": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_a7795f6_4zUXgG"
+      ],
+      "name": "Rich text (ai)",
+      "settings": {}
+    },
+    "multirow_qcfJCc": {
+      "type": "multirow",
+      "blocks": {
+        "row_HJHeDw": {
+          "type": "row",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/636.png",
+            "caption": "Celebraciones",
+            "heading": "Para momentos especiales",
+            "text": "<p>Flores frescas para crear composiciones que acompañan celebraciones, reuniones y momentos importantes con elegancia natural</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "row_TqWN8R": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/9776453.jpg",
+            "caption": "Espacios comerciales",
+            "heading": "Para negocios y locales",
+            "text": "<p>Pensadas para hoteles, restaurantes y boutiques que buscan una presencia visual elegante y duradera.</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "row_pir7DU": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/68468.png",
+            "caption": "Espacios de trabajo",
+            "heading": "Para oficinas",
+            "text": "<p>Desde recepciones hasta salas de reuniones y clínicas, las flores ayudan a crear entornos más profesionales y acogedores.</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "row_3MATNE": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/3773.png",
+            "caption": "En casa",
+            "heading": "Para el hogar",
+            "text": "<p> Ideales para quienes trabajan desde casa o crean con las manos: reposteros, fotógrafos y otros profesionales creativos que valoran lo esencial.</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "row_HJHeDw",
+        "row_TqWN8R",
+        "row_pir7DU",
+        "row_3MATNE"
+      ],
+      "name": "t:sections.multirow.presets.name",
+      "settings": {
+        "image_height": "adapt",
+        "desktop_image_width": "large",
+        "image_layout": "alternate-right",
+        "heading_size": "h1",
+        "text_style": "body",
+        "button_style": "secondary",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "scheme-1",
+        "row_color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "blocks_QYngTB": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_a7795f6_FkAMgj": {
+          "type": "ai_gen_block_a7795f6",
+          "name": "Advanced rich text",
+          "settings": {
+            "content": "<p><em>     Flores </em>que aún conservan la frescura <em>del viaje</em></p>",
+            "html_tag": "paragraph",
+            "font_size": 70,
+            "text_alignment": "center",
+            "text_color": "#373a36",
+            "line_height": 1.5,
+            "letter_spacing": 0,
+            "white_space": "normal",
+            "padding_top": 0,
+            "padding_bottom": 0
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_a7795f6_9K6ERR": {
+          "type": "ai_gen_block_a7795f6",
+          "settings": {
+            "content": "<p></p><p></p>",
+            "html_tag": "h3",
+            "font_size": 70,
+            "text_alignment": "center",
+            "text_color": "#373a36",
+            "line_height": 1,
+            "letter_spacing": 0,
+            "white_space": "normal",
+            "padding_top": 0,
+            "padding_bottom": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_a7795f6_FkAMgj",
+        "ai_gen_block_a7795f6_9K6ERR"
+      ],
+      "name": "Rich text (ai)",
+      "settings": {}
+    },
+    "image_banner_R8tzHC": {
+      "type": "image-banner",
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/lily.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "scheme-5",
+        "stack_images_on_mobile": false,
+        "mobile_content_alignment": "center",
+        "show_text_below": false
+      }
+    },
+    "featured_collection_ntDHrg": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.presets.name",
+      "settings": {
+        "collection": "llegadas-recientes",
+        "products_to_show": 8,
+        "title": "Fresh Arrival",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 4,
+        "enable_desktop_slider": false,
+        "full_width": true,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 80
+      }
+    },
+    "image_banner_DyUyaX": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_93tHrm": {
+          "type": "heading",
+          "settings": {
+            "heading": "Suscripción de flores",
+            "heading_size": "h0"
+          }
+        },
+        "text_DXXwtP": {
+          "type": "text",
+          "settings": {
+            "text": "Recibe flores frescas de forma regular sin tener que realizar nuevos pedidos. Elige la frecuencia de entrega que mejor se adapte a ti y nosotros nos encargaremos de que nuevas flores lleguen a tu puerta según el calendario establecido",
+            "text_style": "body"
+          }
+        },
+        "buttons_YYqYUz": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Leer más",
+            "button_link_1": "shopify://pages/suscripcion-de-flores-para-empresas",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_93tHrm",
+        "text_DXXwtP",
+        "buttons_YYqYUz"
+      ],
+      "disabled": true,
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/flora11l.png",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": true,
+        "color_scheme": "",
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
+        "show_text_below": true
+      }
+    },
+    "rich_text_HFxcNY": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_wwnNAK": {
+          "type": "heading",
+          "settings": {
+            "heading": "Opiniones de clientes",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_wwnNAK"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 80,
+        "padding_bottom": 20
+      }
+    },
+    "1780662718b7764603": {
+      "type": "apps",
+      "blocks": {
+        "loox_reviews_loox_agg_section_AjYHxG": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-agg-section/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "settings": {
+            "reviews_to_display": "product_reviews_only",
+            "default_tab": "product_reviews",
+            "only_photos": false,
+            "hide_thumbnails": true,
+            "product_handle": "",
+            "aggregated": true,
+            "data-limit": 10,
+            "maxwidth": 1520,
+            "is_sample": false
+          }
+        }
+      },
+      "block_order": [
+        "loox_reviews_loox_agg_section_AjYHxG"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "multicolumn_FaMT8a": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_qRJq6q": {
+          "type": "column",
+          "settings": {
+            "title": "Directamente desde Colombia",
+            "text": "<p>Flores frescas seleccionadas y enviadas directamente desde Colombia a Chile, sin escalas</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_8pwL3y": {
+          "type": "column",
+          "settings": {
+            "title": "Compra por tallo",
+            "text": "<p>Elige exactamente las flores y cantidades que necesitas para tu espacio o proyecto</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_UKhV8C": {
+          "type": "column",
+          "disabled": true,
+          "settings": {
+            "title": "Múltiples entregas",
+            "text": "<p>Realiza un solo pedido y recibe tus flores en entregas programadas durante el período seleccionado. Nosotros nos encargamos del resto</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_rXzajD": {
+          "type": "column",
+          "settings": {
+            "title": "Llegadas frescas cada semana",
+            "text": "<p>Nuevas variedades y flores recién llegadas disponibles cada semana</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_qRJq6q",
+        "column_8pwL3y",
+        "column_UKhV8C",
+        "column_rXzajD"
+      ],
+      "disabled": true,
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "title": "Por qué Vuelo Floral",
+        "heading_size": "h2",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 4,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "1780075850a744e46a": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_606d112_h4WwjA": {
+          "type": "ai_gen_block_606d112",
+          "disabled": true,
+          "settings": {
+            "columns_desktop": 3,
+            "columns_mobile": 2,
+            "grid_gap": 20,
+            "section_padding_top": 40,
+            "section_padding_bottom": 40,
+            "image_size": "medium",
+            "image_ratio": "square",
+            "image_border_radius": 6,
+            "text_size": 14,
+            "text_alignment": "left",
+            "text_color": "#373a36",
+            "text_1": "",
+            "show_text_1": true,
+            "text_2": "",
+            "show_text_2": true,
+            "text_3": "",
+            "show_text_3": true,
+            "text_4": "",
+            "show_text_4": true,
+            "text_5": "",
+            "show_text_5": true,
+            "text_6": "",
+            "show_text_6": true,
+            "text_7": "",
+            "show_text_7": true,
+            "text_8": "",
+            "show_text_8": true,
+            "text_9": "",
+            "show_text_9": true,
+            "text_10": "",
+            "show_text_10": true,
+            "text_11": "",
+            "show_text_11": true,
+            "text_12": "",
+            "show_text_12": true
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_606d112_h4WwjA"
+      ],
+      "settings": {}
+    },
+    "image_banner_LtfVdh": {
+      "type": "image-banner",
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/monstera.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "scheme-5",
+        "stack_images_on_mobile": false,
+        "mobile_content_alignment": "center",
+        "show_text_below": false
+      }
+    },
+    "collapsible_content_CK9amG": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_np36mn": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "¿De dónde provienen sus flores?",
+            "icon": "question_mark",
+            "row_content": "<p>Trabajamos con tallos frescos de productores seleccionados en Colombia, Ecuador y flores de estación. Recibimos flores frescas de forma regular y gracias a una logística eficiente, las flores conservan mejor su frescura y belleza durante más tiempo.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_RMYQgt": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "¿Puedo comprar flores por tallo?",
+            "icon": "question_mark",
+            "row_content": "<p>Sí. Puedes seleccionar las variedades que prefieras y añadir la cantidad de tallos que necesites para crear tu propia composición.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_YQeXqz": {
+          "type": "collapsible_row",
+          "disabled": true,
+          "settings": {
+            "heading": "¿Puedo contratar una suscripción floral?",
+            "icon": "question_mark",
+            "row_content": "<p>Sí. Puedes suscribirte y recibir flores frescas de forma periódica según la frecuencia que prefieras, sin necesidad de realizar un nuevo pedido cada vez.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_LeV4Eg": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "¿Durante cuánto tiempo puedo solicitar un cambio o reposición?",
+            "icon": "question_mark",
+            "row_content": "<p>Las flores son productos delicados que, por naturaleza, experimentan cambios a lo largo de su ciclo de vida. Por este motivo, ofrecemos cambios o reposiciones dentro de las primeras 24 horas posteriores a la entrega si las flores fueron recibidas en condiciones insatisfactorias.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_np36mn",
+        "collapsible_row_RMYQgt",
+        "collapsible_row_YQeXqz",
+        "collapsible_row_LeV4Eg"
+      ],
+      "name": "t:sections.collapsible_content.presets.name",
+      "settings": {
+        "caption": "",
+        "heading": "Preguntas frecuentes",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "none",
+        "container_color_scheme": "",
+        "color_scheme": "",
+        "open_first_collapsible_row": true,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "1781103701372b5b8e": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_5bf09b9_6BkeKw": {
+          "type": "ai_gen_block_5bf09b9",
+          "settings": {
+            "button_label": "Ver todo",
+            "button_link": "shopify://pages/faq-1",
+            "color_scheme": "scheme-1",
+            "alignment": "center",
+            "padding_top": 0,
+            "padding_bottom": 36
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_5bf09b9_6BkeKw"
+      ],
+      "name": "button",
+      "settings": {}
+    },
+    "featured_blog_RCWPtb": {
+      "type": "featured-blog",
+      "name": "t:sections.featured-blog.presets.name",
+      "settings": {
+        "blog": "news",
+        "post_limit": 3,
+        "heading": "Artículos del blog",
+        "heading_size": "h1",
+        "columns_desktop": 3,
+        "show_view_all": true,
+        "show_image": true,
+        "show_date": false,
+        "show_author": false,
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 40
+      }
+    }
+  },
+  "order": [
+    "image_banner_PrcWJW",
+    "custom_liquid_q4W6mB",
+    "rich_text_NdqaMY",
+    "1780058827aa4ae367",
+    "1780068513491070b0",
+    "multirow_qcfJCc",
+    "blocks_QYngTB",
+    "image_banner_R8tzHC",
+    "featured_collection_ntDHrg",
+    "image_banner_DyUyaX",
+    "rich_text_HFxcNY",
+    "1780662718b7764603",
+    "multicolumn_FaMT8a",
+    "1780075850a744e46a",
+    "image_banner_LtfVdh",
+    "collapsible_content_CK9amG",
+    "1781103701372b5b8e",
+    "featured_blog_RCWPtb"
+  ]
+}
