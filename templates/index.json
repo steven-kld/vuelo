@@ -389,7 +389,7 @@
       "settings": {
         "collection": "llegadas-recientes",
         "products_to_show": 8,
-        "title": "Fresh Arrival",
+        "title": "Recién llegadas",
         "heading_size": "h1",
         "description": "",
         "show_description": false,
