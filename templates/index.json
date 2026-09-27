@@ -171,7 +171,7 @@
         "ai_gen_block_a7795f6_como01": {
           "type": "ai_gen_block_a7795f6",
           "settings": {
-            "content": "<p>Compra las variedades y cantidades de tallos que quieras para crear tu propia composición. Se entregan protegidas, sin armado de ramo ni empaque de regalo.</p>",
+            "content": "<p>Compra las variedades y la cantidad de flores que quieras para crear tu propia composición. Se entregan protegidas, sin armado de ramo ni empaque de regalo.</p>",
             "html_tag": "paragraph",
             "font_size": 18,
             "text_alignment": "center",
@@ -653,16 +653,16 @@
           "settings": {
             "heading": "¿De dónde provienen sus flores?",
             "icon": "question_mark",
-            "row_content": "<p>Trabajamos con tallos frescos de productores seleccionados en Colombia, Ecuador y flores de estación. Recibimos flores frescas de forma regular y gracias a una logística eficiente, las flores conservan mejor su frescura y belleza durante más tiempo.</p>",
+            "row_content": "<p>Trabajamos con flores frescas de productores seleccionados en Colombia, Ecuador y flores de estación. Recibimos flores frescas de forma regular y gracias a una logística eficiente, las flores conservan mejor su frescura y belleza durante más tiempo.</p>",
             "page": ""
           }
         },
         "collapsible_row_RMYQgt": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "¿Puedo comprar flores por tallo?",
+            "heading": "¿Puedo comprar flores por unidad?",
             "icon": "question_mark",
-            "row_content": "<p>Sí. Puedes seleccionar las variedades que prefieras y añadir la cantidad de tallos que necesites para crear tu propia composición.</p>",
+            "row_content": "<p>Sí. Puedes seleccionar las variedades que prefieras y añadir la cantidad de flores que necesites para crear tu propia composición.</p>",
             "page": ""
           }
         },
