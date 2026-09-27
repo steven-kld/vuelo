@@ -1,0 +1,238 @@
+{% comment %}
+=========================================================
+  SNIPPET: delivery-slots.liquid
+
+  ВСТАВКА в main-product.liquid после блока price:
+    {% render 'delivery-slots' %}
+
+  ОТКЛЮЧЕНИЕ ДОСТАВКИ НА ДЕНЬ:
+  Admin → Content → Metaobjects → Delivery Closed Date → Add entry
+  Выбрать дату из календаря. Можно добавить несколько записей.
+  Metaobject type: delivery_closed_date, поле: date (тип Date)
+
+  ЛОГИКА СЛОТОВ (время по America/Santiago):
+  Слот 1 (Mañana):  доставка 10:00–14:00, cutoff = 13:15
+  Слот 2 (Tarde):   доставка 14:00–17:00, cutoff = 16:15
+
+  Находим первые 2 ближайших доступных слота, пропуская закрытые даты:
+  • Сегодня открыт, до 13:15   → левый: Mañana hoy (таймер), правый: Tarde hoy
+  • Сегодня открыт, 13:15–16:15 → левый: Tarde hoy (таймер), правый: Mañana [следующий открытый день]
+  • Сегодня открыт, после 16:15 → оба слота на следующий открытый день
+  • Сегодня закрыт              → оба слота на ближайшие открытые дни
+  • Сб/Вс                       → только утренний слот в этот день
+=========================================================
+{% endcomment %}
+
+{%- assign closed_dates_str = '' -%}
+{%- for entry in shop.metaobjects.delivery_closed_date.values -%}
+  {%- assign d = entry.date | date: '%Y-%m-%d' -%}
+  {%- if forloop.first -%}
+    {%- assign closed_dates_str = d -%}
+  {%- else -%}
+    {%- assign closed_dates_str = closed_dates_str | append: ',' | append: d -%}
+  {%- endif -%}
+{%- endfor -%}
+
+<div id="ds-root"
+  data-closed="{{ closed_dates_str | escape }}"
+  style="margin: 12px 0 16px;">
+
+  <div id="ds-grid" style="display:none; grid-template-columns:1fr 1fr; gap:12px;">
+
+    <div id="ds-left" style="
+      border-left: 3px solid #b8c2b0;
+      padding: 6px 12px 8px 14px;
+      background: transparent;
+    ">
+      <div id="ds-left-tag" style="
+        display:inline-block;
+        font-size:10px;
+        font-weight:500;
+        letter-spacing:0.05em;
+        padding:2px 8px;
+        border-radius:99px;
+        margin-bottom:5px;
+        background:#eaf3de;
+        color:#3b6d11;
+      "></div>
+      <div id="ds-left-name" style="font-size:14px; font-weight:500; color:#1a1a1a; margin-bottom:2px;"></div>
+      <div id="ds-left-time" style="font-size:12px; color:#6b6b6b;"></div>
+      <div id="ds-left-timer" style="margin-top:5px; font-size:11px; color:#6b6b6b; display:none;">
+        cierra en <strong id="ds-countdown" style="font-variant-numeric:tabular-nums; color:#1a1a1a; font-weight:500;"></strong>
+      </div>
+    </div>
+
+    <div id="ds-right" style="
+      border-left: 3px solid #b8c2b0;
+      padding: 6px 12px 8px 14px;
+      background: transparent;
+    ">
+      <div id="ds-right-tag" style="
+        display:inline-block;
+        font-size:10px;
+        font-weight:500;
+        letter-spacing:0.05em;
+        padding:2px 8px;
+        border-radius:99px;
+        margin-bottom:5px;
+        background:#eaf3de;
+        color:#3b6d11;
+      "></div>
+      <div id="ds-right-name" style="font-size:14px; font-weight:500; color:#1a1a1a; margin-bottom:2px;"></div>
+      <div id="ds-right-time" style="font-size:12px; color:#6b6b6b;"></div>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+(function() {
+  var TIMEZONE = 'America/Santiago';
+
+  var SLOTS = [
+    { name: 'Durante la mañana', range: '9:00–15:00',  cutoffH: 14, cutoffM: 15 },
+    { name: 'Durante la tarde',  range: '15:00–20:00', cutoffH: 19, cutoffM: 15 }
+  ];
+
+  var DAY_LABELS = [
+    'el domingo', 'el lunes', 'el martes', 'el miércoles',
+    'el jueves', 'el viernes', 'el sábado'
+  ];
+
+  function getSantiagoNow() {
+    var now = new Date();
+    var parts = new Intl.DateTimeFormat('en-CA', {
+      timeZone: TIMEZONE,
+      year: 'numeric', month: '2-digit', day: '2-digit',
+      hour: '2-digit', minute: '2-digit', second: '2-digit',
+      hour12: false
+    }).formatToParts(now);
+    var p = {};
+    parts.forEach(function(x) { p[x.type] = x.value; });
+    return {
+      dateStr:  p.year + '-' + p.month + '-' + p.day,
+      h:        parseInt(p.hour, 10),
+      m:        parseInt(p.minute, 10),
+      s:        parseInt(p.second, 10),
+      totalMin: parseInt(p.hour, 10) * 60 + parseInt(p.minute, 10)
+    };
+  }
+
+  function getDateStrOffset(offsetDays) {
+    var now = new Date();
+    now.setDate(now.getDate() + offsetDays);
+    var parts = new Intl.DateTimeFormat('en-CA', {
+      timeZone: TIMEZONE,
+      year: 'numeric', month: '2-digit', day: '2-digit'
+    }).formatToParts(now);
+    var p = {};
+    parts.forEach(function(x) { p[x.type] = x.value; });
+    return p.year + '-' + p.month + '-' + p.day;
+  }
+
+  function getDowForDateStr(dateStr) {
+    var d = new Date(dateStr + 'T12:00:00');
+    var parts = new Intl.DateTimeFormat('en-US', {
+      timeZone: TIMEZONE, weekday: 'short'
+    }).formatToParts(d);
+    var map = { Sun:0, Mon:1, Tue:2, Wed:3, Thu:4, Fri:5, Sat:6 };
+    return map[parts[0].value];
+  }
+
+  function isClosedDate(dateStr, closedRaw) {
+    if (!closedRaw) return false;
+    return closedRaw.split(',').map(function(d){ return d.trim(); }).indexOf(dateStr) !== -1;
+  }
+
+  function pad(n) { return n < 10 ? '0' + n : String(n); }
+
+  function formatCountdown(totalSeconds) {
+    var h = Math.floor(totalSeconds / 3600);
+    var m = Math.floor((totalSeconds % 3600) / 60);
+    var s = totalSeconds % 60;
+    return h > 0
+      ? pad(h) + ':' + pad(m) + ':' + pad(s)
+      : pad(m) + ':' + pad(s);
+  }
+
+  // Всегда начинаем с offset=1 (завтра) — сегодня не показываем
+  function getNextSlots(now, closedRaw) {
+    var result = [];
+
+    for (var offset = 1; offset <= 14 && result.length < 2; offset++) {
+      var dateStr = getDateStrOffset(offset);
+      if (isClosedDate(dateStr, closedRaw)) continue;
+
+      var dow = getDowForDateStr(dateStr);
+
+      var tag;
+      if (offset === 1) tag = 'Mañana';
+      else {
+        var label = DAY_LABELS[dow];
+        tag = label.charAt(0).toUpperCase() + label.slice(1);
+      }
+
+      // Первый слот этого дня
+      if (result.length < 2) {
+        result.push({ tag: tag, slot: SLOTS[0], timerTarget: null });
+      }
+      // Второй слот этого дня (если ещё нужен)
+      if (result.length < 2) {
+        result.push({ tag: tag, slot: SLOTS[1], timerTarget: null });
+      }
+    }
+
+    return result;
+  }
+
+  function render() {
+    var now  = getSantiagoNow();
+    var root = document.getElementById('ds-root');
+    var grid = document.getElementById('ds-grid');
+    if (!root || !grid) return;
+
+    var closedRaw = root.getAttribute('data-closed');
+    var slots     = getNextSlots(now, closedRaw);
+
+    if (slots.length === 0) {
+      root.style.display = 'none';
+      return;
+    }
+
+    var left  = slots[0];
+    var right = slots[1] || null;
+
+    document.getElementById('ds-left-tag').textContent  = left.tag;
+    document.getElementById('ds-left-name').textContent = left.slot.name;
+    document.getElementById('ds-left-time').textContent = left.slot.range;
+
+    // Таймер — не показываем (сегодня нет доставки)
+    document.getElementById('ds-left-timer').style.display = 'none';
+
+    if (right) {
+      document.getElementById('ds-right-tag').textContent  = right.tag;
+      document.getElementById('ds-right-name').textContent = right.slot.name;
+      document.getElementById('ds-right-time').textContent = right.slot.range;
+      document.getElementById('ds-right').style.display = '';
+    } else {
+      document.getElementById('ds-right').style.display = 'none';
+    }
+
+    grid.style.display = 'grid';
+    root.style.display = '';
+  }
+
+  function tick() {
+    render();
+    setTimeout(tick, 1000);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', tick);
+  } else {
+    tick();
+  }
+})();
+</script>
+
