@@ -93,6 +93,19 @@ min-order-progress .min-order-progress__text {
   margin: 1.2rem 0;
 }
 
+/* В корзине в полосе — текст «Te faltan…»: на узком экране может перенестись */
+.min-order-progress--cart .min-order-progress__bar {
+  height: auto;
+  min-height: 2.8rem;
+  padding: 0.6rem 1.4rem;
+}
+
+.min-order-progress--cart .min-order-progress__amount {
+  white-space: normal;
+  text-align: center;
+  line-height: 1.3;
+}
+
 .min-order-progress__shipping {
   margin: 0.8rem 0 0;
 }

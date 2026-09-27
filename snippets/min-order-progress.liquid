@@ -99,17 +99,15 @@
     assign mop_missing = min_order_threshold | minus: cart.total_price
     assign mop_percent = cart.total_price | times: 100 | divided_by: min_order_threshold | at_most: 100
   -%}
-  <div class="min-order-progress min-order-progress--cart">
-    <p class="min-order-progress__text">
-      {%- if mop_missing > 0 -%}
-        Te faltan {{ mop_missing | money }} para completar tu pedido.
-      {%- else -%}
-        Tu pedido ya alcanza el mínimo.
-      {%- endif -%}
-    </p>
-    <div class="min-order-progress__bar{% if mop_missing <= 0 %} min-order-progress__bar--complete{% endif %}" aria-hidden="true">
-      <span class="min-order-progress__fill" style="width: {{ mop_percent }}%;"></span>
-      <span class="min-order-progress__amount">{{ cart.total_price | money | strip_html }}</span>
+  {%- comment -%} Минимум набран — блок в корзине не выводим {%- endcomment -%}
+  {%- if mop_missing > 0 -%}
+    <div class="min-order-progress min-order-progress--cart">
+      <div class="min-order-progress__bar" role="status">
+        <span class="min-order-progress__fill" style="width: {{ mop_percent }}%;"></span>
+        <span class="min-order-progress__amount">
+          Te faltan {{ mop_missing | money | strip_html }} para completar tu pedido.
+        </span>
+      </div>
     </div>
-  </div>
+  {%- endif -%}
 {%- endif -%}
