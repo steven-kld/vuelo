@@ -15,7 +15,7 @@
         "text_cpajJ3": {
           "type": "text",
           "settings": {
-            "text": "Flores frescas por tallo, directo de Ecuador y Colombia. Elige las variedades y la cantidad que quieras. Pide antes de las 17:00 y llega mañana.",
+            "text": "Flores sueltas, a tu manera. Elige tus flores una a una.",
             "text_style": "body"
           }
         },
@@ -30,14 +30,14 @@
         "buttons_XVyfng": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Comprar por tallo",
+            "button_label_1": "Elegir flores",
             "button_link_1": "shopify://collections/todos-los-productos",
             "button_style_secondary_1": false,
             "button_label_2": "",
             "button_link_2": "",
             "button_style_secondary_2": false,
             "show_min_order": true,
-            "link_label_1": "Por largo de tallo",
+            "link_label_1": "Por tamaño",
             "link_1": "/#por-largo-de-tallo",
             "link_label_2": "",
             "link_2": ""
