@@ -7,7 +7,6 @@ if (!customElements.get('min-order-progress')) {
         this.data = this.readData(this);
         if (!this.productInfo || !this.data) return;
 
-        this.statusElement = this.querySelector('.min-order-progress__status');
         this.textElement = this.querySelector('.min-order-progress__text');
         this.fillElement = this.querySelector('.min-order-progress__fill');
         this.pending = false;
@@ -49,11 +48,10 @@ if (!customElements.get('min-order-progress')) {
         }
       }
 
-      // Пока карточка грузит новый вариант — прячем блок; если вариант не найден, так и остаётся скрытым
+      // Пока карточка грузит новый вариант — держим прежнее состояние до variant-change (без мигания)
       onOptionValueChange({ data } = {}) {
         if (!data?.event || !this.productInfo.contains(data.event.target)) return;
         this.pending = true;
-        this.update();
       }
 
       onVariantChange({ data } = {}) {
@@ -85,7 +83,8 @@ if (!customElements.get('min-order-progress')) {
 
       update() {
         const data = this.data;
-        if (this.pending || !data?.available) return this.render(null);
+        if (this.pending) return;
+        if (!data?.available) return this.render(null);
 
         const input = this.productInfo.querySelector('.quantity__input');
         const limit = typeof data.limit === 'number' ? data.limit : null;
@@ -130,14 +129,12 @@ if (!customElements.get('min-order-progress')) {
         this.render(text, projected / data.threshold);
       }
 
+      // Недоступный вариант — visibility: hidden через модификатор, место под блок остаётся
       render(text, ratio = 0) {
-        if (text === null) {
-          this.statusElement.hidden = true;
-          return;
-        }
+        this.classList.toggle('min-order-progress--unavailable', text === null);
+        if (text === null) return;
         this.textElement.textContent = text;
         this.fillElement.style.width = `${Math.min(Math.max(ratio, 0), 1) * 100}%`;
-        this.statusElement.hidden = false;
       }
 
       // По образцу Shopify.formatMoney; суммы в сотых

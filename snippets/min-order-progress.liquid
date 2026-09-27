@@ -19,12 +19,37 @@
 -%}
 
 {%- if mode == 'product' -%}
-  {%- assign mop_variant = product.selected_or_first_available_variant -%}
-  <min-order-progress class="min-order-progress">
-    <div class="min-order-progress__status" hidden>
-      <p class="min-order-progress__text" aria-live="polite"></p>
+  {%- liquid
+    assign mop_variant = product.selected_or_first_available_variant
+
+    assign mop_text_reached = 'Tu pedido ya alcanza el mínimo.'
+    assign mop_text_selection_completes = 'Con esta selección completas tu pedido — agrégala al carrito.'
+    assign mop_text_minimum = 'Pedido mínimo {T} en total. Combina las flores que quieras.'
+    assign mop_text_missing = 'Con esta selección te faltan {Y} — combina con otras flores.'
+
+    # Начальное состояние на сервере (без сдвига вёрстки); якорь 1–2 шт. и остаток уточняет JS
+    assign mop_qty = mop_variant.quantity_rule.min | default: 1
+    assign mop_projected = mop_variant.price | default: 0 | times: mop_qty | plus: cart.total_price
+    assign mop_missing = min_order_threshold | minus: mop_projected
+    assign mop_percent = mop_projected | times: 100 | divided_by: min_order_threshold | at_most: 100
+    assign mop_threshold_formatted = min_order_threshold | money | strip_html
+
+    if cart.total_price >= min_order_threshold
+      assign mop_text = mop_text_reached
+    elsif cart.total_price == 0
+      assign mop_text = mop_text_minimum | replace: '{T}', mop_threshold_formatted
+    elsif mop_missing <= 0
+      assign mop_text = mop_text_selection_completes
+    else
+      assign mop_missing_formatted = mop_missing | money | strip_html
+      assign mop_text = mop_text_missing | replace: '{Y}', mop_missing_formatted
+    endif
+  -%}
+  <min-order-progress class="min-order-progress{% unless mop_variant.available %} min-order-progress--unavailable{% endunless %}">
+    <div class="min-order-progress__status">
+      <p class="min-order-progress__text" aria-live="polite">{{ mop_text }}</p>
       <div class="min-order-progress__bar" aria-hidden="true">
-        <span class="min-order-progress__fill"></span>
+        <span class="min-order-progress__fill" style="width: {{ mop_percent }}%;"></span>
       </div>
     </div>
     <script type="application/json" data-min-order-data>
@@ -38,18 +63,18 @@
         "cartQty": {{ cart_qty | default: 0 | json }},
         "cartTotal": {{ cart.total_price | json }},
         "threshold": {{ min_order_threshold | json }},
-        "thresholdFormatted": {{ min_order_threshold | money | strip_html | json }},
+        "thresholdFormatted": {{ mop_threshold_formatted | json }},
         "moneyFormat": {{ shop.money_format | json }},
         "texts": {
           "stockOnly": {{ 'Solo hay {N} disponibles.' | json }},
           "stockWithCart": {{ 'Solo hay {N} disponibles y ya tienes {K} en el carrito.' | json }},
           "stockAllInCart": {{ 'Ya tienes en el carrito las {N} disponibles.' | json }},
-          "reached": {{ 'Tu pedido ya alcanza el mínimo.' | json }},
-          "selectionCompletes": {{ 'Con esta selección completas tu pedido — agrégala al carrito.' | json }},
+          "reached": {{ mop_text_reached | json }},
+          "selectionCompletes": {{ mop_text_selection_completes | json }},
           "oneMore": {{ 'Con 1 más de esta flor completas tu pedido.' | json }},
           "twoMore": {{ 'Con 2 más de esta flor completas tu pedido.' | json }},
-          "minimum": {{ 'Pedido mínimo {T} en total. Combina las flores que quieras.' | json }},
-          "missing": {{ 'Con esta selección te faltan {Y} — combina con otras flores.' | json }}
+          "minimum": {{ mop_text_minimum | json }},
+          "missing": {{ mop_text_missing | json }}
         }
       }
     </script>
