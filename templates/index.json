@@ -675,22 +675,12 @@
             "row_content": "<p>Sí. Puedes suscribirte y recibir flores frescas de forma periódica según la frecuencia que prefieras, sin necesidad de realizar un nuevo pedido cada vez.</p>",
             "page": ""
           }
-        },
-        "collapsible_row_LeV4Eg": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "¿Durante cuánto tiempo puedo solicitar un cambio o reposición?",
-            "icon": "question_mark",
-            "row_content": "<p>Las flores son productos delicados que, por naturaleza, experimentan cambios a lo largo de su ciclo de vida. Por este motivo, ofrecemos cambios o reposiciones dentro de las primeras 24 horas posteriores a la entrega si las flores fueron recibidas en condiciones insatisfactorias.</p>",
-            "page": ""
-          }
         }
       },
       "block_order": [
         "collapsible_row_np36mn",
         "collapsible_row_RMYQgt",
-        "collapsible_row_YQeXqz",
-        "collapsible_row_LeV4Eg"
+        "collapsible_row_YQeXqz"
       ],
       "name": "t:sections.collapsible_content.presets.name",
       "settings": {
