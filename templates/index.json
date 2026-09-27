@@ -329,7 +329,7 @@
           "type": "ai_gen_block_a7795f6",
           "name": "Advanced rich text",
           "settings": {
-            "content": "<p><em>     Flores </em>que aún conservan la frescura <em>del viaje</em></p>",
+            "content": "<p>Flores que llegan a Chile en días en vez de semanas</p>",
             "html_tag": "paragraph",
             "font_size": 70,
             "text_alignment": "center",
@@ -345,15 +345,15 @@
         "ai_gen_block_a7795f6_9K6ERR": {
           "type": "ai_gen_block_a7795f6",
           "settings": {
-            "content": "<p></p><p></p>",
-            "html_tag": "h3",
-            "font_size": 70,
+            "content": "<p>La mayoría de las flores importadas llegan a Chile por barco, en unas 2 semanas. Las nuestras vuelan y llegan en días.</p>",
+            "html_tag": "paragraph",
+            "font_size": 18,
             "text_alignment": "center",
             "text_color": "#373a36",
-            "line_height": 1,
+            "line_height": 1.5,
             "letter_spacing": 0,
             "white_space": "normal",
-            "padding_top": 0,
+            "padding_top": 16,
             "padding_bottom": 0
           },
           "blocks": {}
