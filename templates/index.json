@@ -155,7 +155,7 @@
         "ai_gen_block_a7795f6_4zUXgG": {
           "type": "ai_gen_block_a7795f6",
           "settings": {
-            "content": "<p>Vuelo Floral, un modelo directo - flores frescas sin pagar de más por diseño o empaque</p>",
+            "content": "<p>Elige las flores. Nosotros las llevamos frescas.</p>",
             "html_tag": "h2",
             "font_size": 70,
             "text_alignment": "center",
@@ -167,10 +167,27 @@
             "padding_bottom": 0
           },
           "blocks": {}
+        },
+        "ai_gen_block_a7795f6_como01": {
+          "type": "ai_gen_block_a7795f6",
+          "settings": {
+            "content": "<p>Compra las variedades y cantidades de tallos que quieras para crear tu propia composición. Se entregan protegidas, sin armado de ramo ni empaque de regalo.</p>",
+            "html_tag": "paragraph",
+            "font_size": 18,
+            "text_alignment": "center",
+            "text_color": "#373a36",
+            "line_height": 1.5,
+            "letter_spacing": 0,
+            "white_space": "normal",
+            "padding_top": 16,
+            "padding_bottom": 0
+          },
+          "blocks": {}
         }
       },
       "block_order": [
-        "ai_gen_block_a7795f6_4zUXgG"
+        "ai_gen_block_a7795f6_4zUXgG",
+        "ai_gen_block_a7795f6_como01"
       ],
       "name": "Rich text (ai)",
       "settings": {}
