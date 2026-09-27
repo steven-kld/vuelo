@@ -319,13 +319,13 @@ if (!customElements.get('product-info')) {
         };
 
         let min = data.min;
-        const max = data.max === null ? data.max : data.max - data.cartQuantity;
+        const max = data.max === null ? data.max : Math.max(data.max - data.cartQuantity, 0);
         if (max !== null) min = Math.min(min, max);
         if (data.cartQuantity >= data.min) min = Math.min(min, data.step);
 
         this.quantityInput.min = min;
 
-        if (max) {
+        if (max !== null) {
           this.quantityInput.max = max;
         } else {
           this.quantityInput.removeAttribute('max');
@@ -352,7 +352,6 @@ if (!customElements.get('product-info')) {
 
       updateQuantityRules(sectionId, html) {
         if (!this.quantityInput) return;
-        this.setQuantityBoundries();
 
         const quantityFormUpdated = html.getElementById(`Quantity-Form-${sectionId}`);
         const selectors = ['.quantity__input', '.quantity__rules', '.quantity__label'];
@@ -387,6 +386,8 @@ if (!customElements.get('product-info')) {
             }
           }
         }
+
+        this.setQuantityBoundries();
       }
 
       get productForm() {

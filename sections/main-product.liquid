@@ -240,6 +240,19 @@
                     | item_count_for_variant: product.selected_or_first_available_variant.id
                   -%}
                   {% # theme-check-enable %}
+                  {%- liquid
+                    # C1b: лимит = min(quantity_rule.max, остаток), если склад отслеживается
+                    assign qty_variant = product.selected_or_first_available_variant
+                    assign qty_max = qty_variant.quantity_rule.max
+                    if qty_variant.inventory_management == 'shopify' and qty_variant.inventory_policy != 'continue'
+                      if qty_max == null or qty_variant.inventory_quantity < qty_max
+                        assign qty_max = qty_variant.inventory_quantity
+                      endif
+                      if qty_max < 0
+                        assign qty_max = 0
+                      endif
+                    endif
+                  -%}
                   <span class="visually-hidden" id="quantity-label-{{ section.id }}">
                     {%- if cart_qty > 0 -%}
                       {{- 'products.product.quantity.in_cart_aria_label' | t: quantity: cart_qty -}}
@@ -280,9 +293,9 @@
                         data-cart-quantity="{{ cart_qty }}"
                         data-min="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
                         min="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
-                        {% if product.selected_or_first_available_variant.quantity_rule.max != null %}
-                          data-max="{{ product.selected_or_first_available_variant.quantity_rule.max }}"
-                          max="{{ product.selected_or_first_available_variant.quantity_rule.max }}"
+                        {% if qty_max != null %}
+                          data-max="{{ qty_max }}"
+                          max="{{ qty_max }}"
                         {% endif %}
                         step="{{ product.selected_or_first_available_variant.quantity_rule.increment }}"
                         value="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
