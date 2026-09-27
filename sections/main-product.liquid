@@ -15,6 +15,7 @@
   {{ 'component-slider.css' | asset_url | stylesheet_tag }}
   {{ 'component-rating.css' | asset_url | stylesheet_tag }}
   {{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
+  {{ 'min-order-progress.css' | asset_url | stylesheet_tag }}
 
   {% unless product.has_only_default_variant %}
     {{ 'component-product-variant-picker.css' | asset_url | stylesheet_tag }}
@@ -41,6 +42,7 @@
 
   <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'min-order-progress.js' | asset_url }}" defer="defer"></script>
   {%- if product.quantity_price_breaks_configured? -%}
     <script src="{{ 'show-more.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'price-per-item.js' | asset_url }}" defer="defer"></script>
@@ -244,9 +246,11 @@
                     # C1b: лимит = min(quantity_rule.max, остаток), если склад отслеживается
                     assign qty_variant = product.selected_or_first_available_variant
                     assign qty_max = qty_variant.quantity_rule.max
+                    assign qty_stock_limited = false
                     if qty_variant.inventory_management == 'shopify' and qty_variant.inventory_policy != 'continue'
-                      if qty_max == null or qty_variant.inventory_quantity < qty_max
+                      if qty_max == null or qty_variant.inventory_quantity <= qty_max
                         assign qty_max = qty_variant.inventory_quantity
+                        assign qty_stock_limited = true
                       endif
                       if qty_max < 0
                         assign qty_max = 0
@@ -468,6 +472,13 @@
                     </volume-pricing>
                   {%- endif -%}
                 </div>
+                {% render 'min-order-progress',
+                  mode: 'product',
+                  product: product,
+                  limit: qty_max,
+                  stock_limited: qty_stock_limited,
+                  cart_qty: cart_qty
+                %}
               {%- when 'popup' -%}
                 <modal-opener
                   class="product-popup-modal__opener quick-add-hidden"
