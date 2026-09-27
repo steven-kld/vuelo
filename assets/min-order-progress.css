@@ -27,3 +27,7 @@
     transition: none;
   }
 }
+
+.min-order-progress--cart {
+  margin: 1.2rem 0;
+}

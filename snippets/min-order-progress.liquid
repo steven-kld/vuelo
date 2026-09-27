@@ -2,7 +2,7 @@
   Прогресс к минимальному заказу (28.000 CLP).
 
   Accepts:
-  - mode: {String} 'product'
+  - mode: {String} 'product' | 'cart'
   - product: {Object} товар (mode: 'product')
   - limit: {Number} лимит количества варианта, null — без лимита (mode: 'product')
   - stock_limited: {Boolean} лимит задан остатком склада (mode: 'product')
@@ -10,6 +10,7 @@
 
   Usage:
   {% render 'min-order-progress', mode: 'product', product: product, limit: qty_max, stock_limited: qty_stock_limited, cart_qty: cart_qty %}
+  {% render 'min-order-progress', mode: 'cart' %}
 {% endcomment %}
 
 {%- liquid
@@ -53,4 +54,22 @@
       }
     </script>
   </min-order-progress>
+{%- elsif mode == 'cart' and cart.item_count > 0 -%}
+  {%- liquid
+    # Без JS: cart.js перерисовывает .js-contents футера корзины при каждом изменении
+    assign mop_missing = min_order_threshold | minus: cart.total_price
+    assign mop_percent = cart.total_price | times: 100 | divided_by: min_order_threshold | at_most: 100
+  -%}
+  <div class="min-order-progress min-order-progress--cart">
+    <p class="min-order-progress__text">
+      {%- if mop_missing > 0 -%}
+        Te faltan {{ mop_missing | money }} para completar tu pedido.
+      {%- else -%}
+        Tu pedido ya alcanza el mínimo.
+      {%- endif -%}
+    </p>
+    <div class="min-order-progress__bar" aria-hidden="true">
+      <span class="min-order-progress__fill" style="width: {{ mop_percent }}%;"></span>
+    </div>
+  </div>
 {%- endif -%}
