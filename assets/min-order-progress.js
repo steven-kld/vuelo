@@ -211,7 +211,7 @@ if (!customElements.get('min-order-progress')) {
       }
 
       // Недоступный вариант — visibility: hidden через модификатор, место под блок остаётся
-      // В полосе — корзина + выбор; зелёная, когда сумма дошла до порога
+      // В полосе — корзина + выбор; класс --complete (минимум набран) прячет полосу в CSS
       render(text, ratio = 0, amount = '') {
         this.classList.toggle('min-order-progress--unavailable', text === null);
         if (text === null) return;
