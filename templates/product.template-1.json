@@ -1,0 +1,530 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "loox_reviews_loox_rating_Y6YxYJ": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-rating/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "settings": {
+            "contentSize": 16,
+            "pattern": "",
+            "hideText": false,
+            "alignment": "",
+            "layout": "",
+            "textColor": "",
+            "starColor": "",
+            "showAllReviews": false,
+            "looxOpenFloatingWidget": false,
+            "emptyRatingWidget": true
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "body"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": false
+          }
+        },
+        "custom_liquid_bJatrn": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div id='ss-emoji'></div>"
+          }
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        },
+        "complementary_zt8yPF": {
+          "type": "complementary",
+          "settings": {
+            "block_heading": "Completa tu selección",
+            "make_collapsible_row": false,
+            "icon": "price_tag",
+            "product_list_limit": 10,
+            "products_per_page": 3,
+            "pagination_style": "counter",
+            "image_ratio": "square",
+            "enable_quick_add": true
+          }
+        },
+        "collapsible_tab_W7XRRh": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Información adicional",
+            "icon": "clipboard",
+            "content": "<p>1. El monto mínimo de compra es de $28.000 CLP. Agrega más productos a tu carrito para continuar con el pago.<br/><br/><br/>2. Se vende por tallo y se entrega en embalaje técnico. El armado y la presentación para regalo no están incluidos.<br/><br/>A diferencia de la floristería tradicional de regalos, aquí puedes elegir cada variedad y la cantidad exacta de tallos para crear una composición completamente a tu medida.<br/></p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_NVhYKr": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Suscripción floral",
+            "icon": "plant",
+            "content": "<p>Si deseas contratar una suscripción floral, contáctanos por correo electrónico a <a><strong>info@vuelofloral.cl</strong></a>. <br/><br/>Estaremos encantados de ayudarte a elegir la opción que mejor se adapte a tus necesidades.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "loox_reviews_loox_rating_Y6YxYJ",
+        "text",
+        "title",
+        "description",
+        "price",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "custom_liquid_bJatrn",
+        "share",
+        "complementary_zt8yPF",
+        "collapsible_tab_W7XRRh",
+        "collapsible_tab_NVhYKr"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail",
+        "mobile_thumbnails": "show",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 44
+      }
+    },
+    "multicolumn_xdkXFy": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_4c69TY": {
+          "type": "column",
+          "settings": {
+            "title": "{{ product.metafields.custom.care_step_1_title.value }}",
+            "text": "<p>{{ product.metafields.custom.care_step_1_text | metafield_tag }}</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_gXR7fF": {
+          "type": "column",
+          "settings": {
+            "title": "{{ product.metafields.custom.care_step_2_title.value }}",
+            "text": "<p>{{ product.metafields.custom.care_step_2_text | metafield_tag }}</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_BY3rkj": {
+          "type": "column",
+          "settings": {
+            "title": "{{ product.metafields.custom.care_step_3_title.value }}",
+            "text": "<p>{{ product.metafields.custom.care_step_3_text | metafield_tag }}</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_cHh8jX": {
+          "type": "column",
+          "settings": {
+            "title": "{{ product.metafields.custom.care_step_4_title.value }}",
+            "text": "<p>{{ product.metafields.custom.care_step_4_text | metafield_tag }}</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_4c69TY",
+        "column_gXR7fF",
+        "column_BY3rkj",
+        "column_cHh8jX"
+      ],
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "title": "Cuidados de la flor",
+        "heading_size": "h2",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 4,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "heading": "Completa tu composición",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "blob",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "padding_top": 32,
+        "padding_bottom": 40
+      }
+    },
+    "image_with_text_jPkYqN": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_LEghPD": {
+          "type": "heading",
+          "settings": {
+            "heading": "Sobre esta <em>variedad</em>",
+            "heading_size": "h0"
+          }
+        },
+        "text_nxGapw": {
+          "type": "text",
+          "settings": {
+            "text": "<p>{{ product.metafields.custom.about_variety | metafield_tag }}</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_LEghPD",
+        "text_nxGapw"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "{{ product.metafields.custom.product_png_image_transparent_background.value }}",
+        "height": "large",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "ambient",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "scheme-5",
+        "padding_top": 20,
+        "padding_bottom": 40
+      }
+    },
+    "featured_collection_W8z8tG": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.presets.name",
+      "settings": {
+        "collection": "{{ product.metafields.custom.similar_flowers_collection.value }}",
+        "products_to_show": 4,
+        "title": "Flores con una estética similar",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 4,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "link",
+        "color_scheme": "",
+        "image_ratio": "square",
+        "image_shape": "blob",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "standard",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 20,
+        "padding_bottom": 40
+      }
+    },
+    "image_with_text_DMEBnU": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_NGEMYD": {
+          "type": "heading",
+          "settings": {
+            "heading": "<em>Inspiración</em> para tu espacio",
+            "heading_size": "h0"
+          }
+        },
+        "text_KnGzt8": {
+          "type": "text",
+          "settings": {
+            "text": "<p>{{ product.metafields.custom.recommended_spaces | metafield_tag }}</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_NGEMYD",
+        "text_KnGzt8"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "{{ product.metafields.custom.spaces_inspiration_image.value }}",
+        "height": "large",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "image_behavior": "none",
+        "content_layout": "overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "scheme-5",
+        "padding_top": 20,
+        "padding_bottom": 40
+      }
+    },
+    "rich_text_ptYFnx": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_9mBfPN": {
+          "type": "heading",
+          "settings": {
+            "heading": "Postales de llegada",
+            "heading_size": "h2"
+          }
+        },
+        "text_ngWcY4": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Comentarios de clientes tras la llegada de sus flores</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_9mBfPN",
+        "text_ngWcY4"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "178053252551cf20e3": {
+      "type": "apps",
+      "blocks": {
+        "loox_reviews_loox_dynamic_section_fnecyN": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-dynamic-section/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "settings": {
+            "reviews_to_display": "",
+            "default_tab": "automatic",
+            "only_photos": false,
+            "aggregated": false,
+            "limit": 40,
+            "hide_thumbnails": false,
+            "maxwidth": 1080,
+            "is_sample": false
+          }
+        },
+        "loox_reviews_loox_dynamic_carousel_DqgLg9": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-dynamic-carousel/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "settings": {
+            "corner-radius": 40,
+            "items-per-view": 2,
+            "items-per-view-mobile": 3,
+            "max-characters": 180,
+            "autoplay": false,
+            "autoplay-delay": 5,
+            "main-color": "#ae8868",
+            "stars-color": "#ff8d00",
+            "show-review-text": true,
+            "text-color": "",
+            "reviewer-name-color": "",
+            "verified-badge-color": "",
+            "quote-marks-icon": "style-1",
+            "quote-marks-icon-color": "",
+            "review-background-color": "",
+            "product-ids": ""
+          }
+        }
+      },
+      "block_order": [
+        "loox_reviews_loox_dynamic_section_fnecyN",
+        "loox_reviews_loox_dynamic_carousel_DqgLg9"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "featured_blog_pDg6ji": {
+      "type": "featured-blog",
+      "name": "t:sections.featured-blog.presets.name",
+      "settings": {
+        "blog": "news",
+        "post_limit": 3,
+        "heading": "Bitácora de vuelo",
+        "heading_size": "h1",
+        "columns_desktop": 3,
+        "show_view_all": true,
+        "show_image": true,
+        "show_date": false,
+        "show_author": false,
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "ss_trust_badges_emojis_cmEnjT": {
+      "type": "ss-trust-badges-emojis",
+      "blocks": {
+        "item_XR3kRc": {
+          "type": "item",
+          "settings": {
+            "icon": "💧",
+            "title": "<p>Hidratación</p>",
+            "subtitle": "<p>{{ product.metafields.custom.hidratacion.value }}</p>"
+          }
+        },
+        "item_r4Pb3n": {
+          "type": "item",
+          "settings": {
+            "icon": "⏳",
+            "title": "<p>Vida en florero</p>",
+            "subtitle": "<p>{{ product.metafields.custom.duracion_en_florero.value }}</p>"
+          }
+        },
+        "item_9G8gwA": {
+          "type": "item",
+          "settings": {
+            "icon": "🎫",
+            "title": "<p>Categoría</p>",
+            "subtitle": "<p>{{ product.metafields.custom.categoria.value }}</p>"
+          }
+        },
+        "item_CpLkeF": {
+          "type": "item",
+          "settings": {
+            "icon": "☁️",
+            "title": "<p>Fragancia</p>",
+            "subtitle": "<p>{{ product.metafields.custom.fragancia.value }}</p>"
+          }
+        },
+        "item_bD6hbn": {
+          "type": "item",
+          "settings": {
+            "icon": "🌿",
+            "title": "<p>Nombre botánico</p>",
+            "subtitle": "<p>{{ product.metafields.custom.nombre_botanico.value }}</p>"
+          }
+        },
+        "item_RN4KxM": {
+          "type": "item",
+          "settings": {
+            "icon": "✈️",
+            "title": "<p>Origen</p>",
+            "subtitle": "<p>{{ product.metafields.custom.origen.value }}</p>"
+          }
+        }
+      },
+      "block_order": [
+        "item_XR3kRc",
+        "item_r4Pb3n",
+        "item_9G8gwA",
+        "item_CpLkeF",
+        "item_bD6hbn",
+        "item_RN4KxM"
+      ],
+      "name": "SS - Trust badges emojis",
+      "settings": {
+        "trust_position": "below_buy",
+        "emoji_font_size": 22,
+        "title_custom": false,
+        "title_font": "josefin_sans_n4",
+        "title_size": 16,
+        "title_size_mobile": 14,
+        "title_height": 110,
+        "sub_title_custom": false,
+        "sub_title_font": "josefin_sans_n4",
+        "sub_title_size": 14,
+        "sub_title_size_mobile": 12,
+        "sub_title_height": 110,
+        "title_color": "#000000",
+        "sub_title_color": "#716969",
+        "line_border_color": "#dedede",
+        "background_color": "#eee7e2",
+        "background_gradient": "",
+        "border_color": "#000000",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 12,
+        "padding_bottom": 12,
+        "padding_horizontal": 0,
+        "padding_horizontal_mobile": 0,
+        "full_width": true,
+        "content_width": 120,
+        "border_thickness": 0
+      }
+    }
+  },
+  "order": [
+    "main",
+    "multicolumn_xdkXFy",
+    "related-products",
+    "image_with_text_jPkYqN",
+    "featured_collection_W8z8tG",
+    "image_with_text_DMEBnU",
+    "rich_text_ptYFnx",
+    "178053252551cf20e3",
+    "featured_blog_pDg6ji",
+    "ss_trust_badges_emojis_cmEnjT"
+  ]
+}
