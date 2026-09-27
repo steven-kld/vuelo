@@ -17,8 +17,10 @@ min-order-progress .min-order-progress__text {
   visibility: hidden;
 }
 
-/* Толстая полоса с суммой внутри; видна, пока минимум не набран */
+/* Толстая полоса с суммой внутри: серая → зелёная, когда выбор добирает минимум */
 .min-order-progress__bar {
+  --min-order-progress-green: #eaf3de;
+  --min-order-progress-green-text: #3b6d11;
   position: relative;
   display: flex;
   align-items: center;
@@ -49,8 +51,17 @@ min-order-progress .min-order-progress__text {
   color: rgb(var(--color-foreground));
 }
 
-/* Минимум набран (корзина + выбор) — полоса скрыта; место остаётся, вёрстка не прыгает */
-.min-order-progress__bar--complete {
+/* Корзина < минимума, корзина + выбор ≥ минимума — зелёная */
+.min-order-progress__bar--complete .min-order-progress__fill {
+  background: var(--min-order-progress-green);
+}
+
+.min-order-progress__bar--complete .min-order-progress__amount {
+  color: var(--min-order-progress-green-text);
+}
+
+/* Корзина уже ≥ минимума — полоса скрыта; место остаётся, вёрстка не прыгает */
+.min-order-progress__bar--hidden {
   visibility: hidden;
 }
 

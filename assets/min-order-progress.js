@@ -148,7 +148,12 @@ if (!customElements.get('min-order-progress')) {
           }
         }
 
-        this.render(fill(text), projected / data.threshold, this.formatMoney(projected, data.moneyFormat));
+        this.render(
+          fill(text),
+          projected / data.threshold,
+          this.formatMoney(projected, data.moneyFormat),
+          data.cartTotal >= data.threshold
+        );
       }
 
       // «Cantidad (3 en el carrito + 4 en tu selección)»: метку перерисовывает product-info.js,
@@ -210,15 +215,17 @@ if (!customElements.get('min-order-progress')) {
         if (this.tooltip) this.tooltip.hidden = true;
       }
 
-      // Недоступный вариант — visibility: hidden через модификатор, место под блок остаётся
-      // В полосе — корзина + выбор; класс --complete (минимум набран) прячет полосу в CSS
-      render(text, ratio = 0, amount = '') {
+      // Недоступный вариант — visibility: hidden через модификатор, место под блок остаётся.
+      // В полосе — корзина + выбор. Корзина уже ≥ минимума — полоса скрыта (--hidden);
+      // иначе зелёная (--complete), когда выбор добирает минимум.
+      render(text, ratio = 0, amount = '', cartReached = false) {
         this.classList.toggle('min-order-progress--unavailable', text === null);
         if (text === null) return;
         this.textElement.textContent = text;
         this.fillElement.style.width = `${Math.min(Math.max(ratio, 0), 1) * 100}%`;
         this.amountElement.textContent = amount;
-        this.barElement.classList.toggle('min-order-progress__bar--complete', ratio >= 1);
+        this.barElement.classList.toggle('min-order-progress__bar--hidden', cartReached);
+        this.barElement.classList.toggle('min-order-progress__bar--complete', !cartReached && ratio >= 1);
       }
 
       // По образцу Shopify.formatMoney; суммы в сотых
