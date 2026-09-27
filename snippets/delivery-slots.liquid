@@ -91,8 +91,8 @@
   var TIMEZONE = 'America/Santiago';
 
   var SLOTS = [
-    { name: 'Durante la mañana', range: '10:00–14:00', cutoffH: 13, cutoffM: 15 },
-    { name: 'Durante la tarde',  range: '14:00–17:00', cutoffH: 16, cutoffM: 15 }
+    { name: 'Durante la mañana', range: '9:00–15:00',  cutoffH: 14, cutoffM: 15 },
+    { name: 'Durante la tarde',  range: '15:00–20:00', cutoffH: 19, cutoffM: 15 }
   ];
 
   var DAY_LABELS = [
@@ -156,39 +156,30 @@
       : pad(m) + ':' + pad(s);
   }
 
-  function cutoffSeconds(slot) {
-    return slot.cutoffH * 3600 + slot.cutoffM * 60;
-  }
-
-  // Первые 2 ближайших слота начиная с сегодня, пропуская закрытые даты:
-  // сегодня — только слоты, чей cutoff ещё не прошёл (у них таймер); Сб/Вс — только утренний слот
+  // Всегда начинаем с offset=1 (завтра) — сегодня не показываем
   function getNextSlots(now, closedRaw) {
     var result = [];
-    var nowSeconds = now.totalMin * 60 + now.s;
 
-    for (var offset = 0; offset <= 14 && result.length < 2; offset++) {
+    for (var offset = 1; offset <= 14 && result.length < 2; offset++) {
       var dateStr = getDateStrOffset(offset);
       if (isClosedDate(dateStr, closedRaw)) continue;
 
       var dow = getDowForDateStr(dateStr);
-      var daySlots = (dow === 0 || dow === 6) ? [SLOTS[0]] : SLOTS;
 
       var tag;
-      if (offset === 0) tag = 'Hoy';
-      else if (offset === 1) tag = 'Mañana';
+      if (offset === 1) tag = 'Mañana';
       else {
         var label = DAY_LABELS[dow];
         tag = label.charAt(0).toUpperCase() + label.slice(1);
       }
 
-      for (var i = 0; i < daySlots.length && result.length < 2; i++) {
-        var slot = daySlots[i];
-        var timerTarget = null;
-        if (offset === 0) {
-          if (nowSeconds >= cutoffSeconds(slot)) continue;
-          timerTarget = cutoffSeconds(slot);
-        }
-        result.push({ tag: tag, slot: slot, timerTarget: timerTarget });
+      // Первый слот этого дня
+      if (result.length < 2) {
+        result.push({ tag: tag, slot: SLOTS[0], timerTarget: null });
+      }
+      // Второй слот этого дня (если ещё нужен)
+      if (result.length < 2) {
+        result.push({ tag: tag, slot: SLOTS[1], timerTarget: null });
       }
     }
 
@@ -216,15 +207,8 @@
     document.getElementById('ds-left-name').textContent = left.slot.name;
     document.getElementById('ds-left-time').textContent = left.slot.range;
 
-    // Таймер до cutoff — только у левого слота, если он сегодня
-    var timer = document.getElementById('ds-left-timer');
-    if (left.timerTarget !== null) {
-      var secondsLeft = left.timerTarget - (now.totalMin * 60 + now.s);
-      document.getElementById('ds-countdown').textContent = formatCountdown(Math.max(secondsLeft, 0));
-      timer.style.display = '';
-    } else {
-      timer.style.display = 'none';
-    }
+    // Таймер — не показываем (сегодня нет доставки)
+    document.getElementById('ds-left-timer').style.display = 'none';
 
     if (right) {
       document.getElementById('ds-right-tag').textContent  = right.tag;
