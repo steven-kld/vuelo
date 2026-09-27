@@ -8,7 +8,9 @@ if (!customElements.get('min-order-progress')) {
         if (!this.productInfo || !this.data) return;
 
         this.textElement = this.querySelector('.min-order-progress__text');
+        this.barElement = this.querySelector('.min-order-progress__bar');
         this.fillElement = this.querySelector('.min-order-progress__fill');
+        this.amountElement = this.querySelector('.min-order-progress__amount');
         this.pending = false;
 
         this.onQuantityInput = (event) => {
@@ -126,15 +128,18 @@ if (!customElements.get('min-order-progress')) {
           .replace('{T}', () => data.thresholdFormatted)
           .replace('{Y}', () => this.formatMoney(Math.max(missing, 0), data.moneyFormat));
 
-        this.render(text, projected / data.threshold);
+        this.render(text, projected / data.threshold, this.formatMoney(projected, data.moneyFormat));
       }
 
       // Недоступный вариант — visibility: hidden через модификатор, место под блок остаётся
-      render(text, ratio = 0) {
+      // В полосе — корзина + выбор; зелёная, когда сумма дошла до порога
+      render(text, ratio = 0, amount = '') {
         this.classList.toggle('min-order-progress--unavailable', text === null);
         if (text === null) return;
         this.textElement.textContent = text;
         this.fillElement.style.width = `${Math.min(Math.max(ratio, 0), 1) * 100}%`;
+        this.amountElement.textContent = amount;
+        this.barElement.classList.toggle('min-order-progress__bar--complete', ratio >= 1);
       }
 
       // По образцу Shopify.formatMoney; суммы в сотых

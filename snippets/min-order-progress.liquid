@@ -54,8 +54,9 @@
   <min-order-progress class="min-order-progress{% unless mop_variant.available %} min-order-progress--unavailable{% endunless %}">
     <div class="min-order-progress__status">
       <p class="min-order-progress__text" aria-live="polite">{{ mop_text }}</p>
-      <div class="min-order-progress__bar" aria-hidden="true">
+      <div class="min-order-progress__bar{% if mop_missing <= 0 %} min-order-progress__bar--complete{% endif %}" aria-hidden="true">
         <span class="min-order-progress__fill" style="width: {{ mop_percent }}%;"></span>
+        <span class="min-order-progress__amount">{{ mop_projected | money | strip_html }}</span>
       </div>
     </div>
     <script type="application/json" data-min-order-data>
@@ -106,8 +107,9 @@
         Tu pedido ya alcanza el mínimo.
       {%- endif -%}
     </p>
-    <div class="min-order-progress__bar" aria-hidden="true">
+    <div class="min-order-progress__bar{% if mop_missing <= 0 %} min-order-progress__bar--complete{% endif %}" aria-hidden="true">
       <span class="min-order-progress__fill" style="width: {{ mop_percent }}%;"></span>
+      <span class="min-order-progress__amount">{{ cart.total_price | money | strip_html }}</span>
     </div>
   </div>
 {%- endif -%}

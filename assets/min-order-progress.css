@@ -17,19 +17,45 @@ min-order-progress .min-order-progress__text {
   visibility: hidden;
 }
 
+/* Толстая полоса с суммой внутри; до порога — нейтральная, на пороге — зелёная */
 .min-order-progress__bar {
-  height: 0.4rem;
-  border-radius: 0.2rem;
-  background: rgba(var(--color-foreground), 0.12);
+  --min-order-progress-green: 59, 109, 17;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.8rem;
+  border-radius: 1.4rem;
+  background: rgba(var(--color-foreground), 0.08);
   overflow: hidden;
 }
 
 .min-order-progress__fill {
-  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
   width: 0;
-  height: 100%;
-  background: rgb(var(--color-foreground));
-  transition: width var(--duration-default, 0.2s) ease;
+  background: rgba(var(--color-foreground), 0.2);
+  transition: width var(--duration-default, 0.2s) ease, background-color var(--duration-default, 0.2s) ease;
+}
+
+.min-order-progress__amount {
+  position: relative;
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  color: rgb(var(--color-foreground));
+}
+
+.min-order-progress__bar--complete .min-order-progress__fill {
+  background: rgb(var(--min-order-progress-green));
+}
+
+.min-order-progress__bar--complete .min-order-progress__amount {
+  color: #fff;
 }
 
 @media (prefers-reduced-motion: reduce) {
