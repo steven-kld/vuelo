@@ -27,6 +27,16 @@
   #Banner-{{ section.id }}::after {
     opacity: {{ section.settings.image_overlay_opacity | divided_by: 100.0 }};
   }
+
+  /* Несколько текстовых блоков подряд — как перенос строки, без большого отступа */
+  #Banner-{{ section.id }} .banner__box > .banner__text + .banner__text {
+    margin-top: 0.4rem;
+  }
+
+  #Banner-{{ section.id }} .banner__box > .banner__text > p {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 {%- endstyle -%}
 
 {%- liquid
