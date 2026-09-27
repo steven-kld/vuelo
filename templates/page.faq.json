@@ -230,24 +230,6 @@
             "page": ""
           }
         },
-        "collapsible_row_UxVT3T": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "¿Durante cuánto tiempo puedo solicitar un cambio o reposición?",
-            "icon": "question_mark",
-            "row_content": "<p>Las flores son productos delicados que, por naturaleza, experimentan cambios y transformaciones a lo largo de su ciclo de vida. Por este motivo, ofrecemos cambios o reposiciones dentro de las primeras 24 horas posteriores a la entrega si las flores fueron recibidas en condiciones insatisfactorias.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_yzh73R": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "¿La política de cambios y reposiciones aplica a pedidos realizados mediante servicios externos?",
-            "icon": "question_mark",
-            "row_content": "<p>No. No realizamos cambios ni reposiciones para compras efectuadas a través de servicios externos como Rappi, Uber Eats u otras plataformas similares.</p>",
-            "page": ""
-          }
-        },
         "collapsible_row_MEfnwT": {
           "type": "collapsible_row",
           "settings": {
@@ -263,8 +245,6 @@
         "collapsible_row_rYGERg",
         "collapsible_row_8dxLNR",
         "collapsible_row_9hzcT3",
-        "collapsible_row_UxVT3T",
-        "collapsible_row_yzh73R",
         "collapsible_row_MEfnwT"
       ],
       "name": "t:sections.collapsible_content.presets.name",
