@@ -56,7 +56,7 @@
           "settings": {
             "heading": "¿Por qué los precios de Vuelo Floral son más accesibles que los de una florería tradicional?",
             "icon": "question_mark",
-            "row_content": "<p>Porque somos un modelo directo al consumidor: no cobramos de más por diseño elaborado ni empaques de lujo. Vendemos tallos frescos, listos para que tú los organices como quieras.</p>",
+            "row_content": "<p>Porque somos un modelo directo al consumidor: no cobramos de más por diseño elaborado ni empaques de lujo. Vendemos flores frescas, listas para que tú las organices como quieras.</p>",
             "page": ""
           }
         },
@@ -83,16 +83,16 @@
           "settings": {
             "heading": "¿De dónde provienen sus flores?",
             "icon": "question_mark",
-            "row_content": "<p>Trabajamos con tallos frescos de productores seleccionados en Colombia, Ecuador y flores de estación. Recibimos flores frescas de forma regular y gracias a una logística eficiente, las flores conservan mejor su frescura y belleza durante más tiempo.<br/><br/></p>",
+            "row_content": "<p>Trabajamos con flores frescas de productores seleccionados en Colombia, Ecuador y flores de estación. Recibimos flores frescas de forma regular y gracias a una logística eficiente, las flores conservan mejor su frescura y belleza durante más tiempo.<br/><br/></p>",
             "page": ""
           }
         },
         "collapsible_row_UVPjQ6": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "¿Puedo comprar flores por tallo?",
+            "heading": "¿Puedo comprar flores por unidad?",
             "icon": "question_mark",
-            "row_content": "<p>Sí. Puedes elegir las variedades que prefieras y comprar solo la cantidad de tallos que necesites — 3, 5, 10 o los que quieras — sin obligarte a comprar un paquete completo de una sola variedad. Así logras la combinación y el color exactos para tu arreglo, sin sobras ni desperdicio: una forma más sustentable económica de comprar flores.</p>",
+            "row_content": "<p>Sí. Puedes elegir las variedades que prefieras y comprar solo la cantidad de flores que necesites — 3, 5, 10 o los que quieras — sin obligarte a comprar un paquete completo de una sola variedad. Así logras la combinación y el color exactos para tu arreglo, sin sobras ni desperdicio: una forma más sustentable económica de comprar flores.</p>",
             "page": ""
           }
         },
