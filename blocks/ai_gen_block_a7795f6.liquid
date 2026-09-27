@@ -1,0 +1,223 @@
+{% doc %}
+  @prompt
+    Создай новый блок секции для Shopify темы, похожий на Rich Text, но с возможностью добавлять множество текстовых блоков через систему blocks. Каждый блок — это одно текстовое поле типа richtext (поддерживающее инлайн-форматирование: жирный, курсив, подчёркивание, ссылки внутри одного поля — то есть пользователь может выделить часть текста и применить к ней стиль). Помимо richtext поля, каждый блок должен иметь настройки на уровне всего блока: выбор HTML-тега (paragraph, h1, h2, h3, h4, h5, h6), размер шрифта (ползунок в px), выравнивание текста (left, center, right, justify), цвет текста (color picker), межстрочный интервал (line-height), межбуквенный интервал (letter-spacing), настройка переноса строк (white-space: normal / nowrap / pre-wrap), верхний и нижний отступ блока (padding-top, padding-bottom). Без кнопки. Секция полностью настраивается через редактор тем.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-advanced-richtext-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    font-size: {{ block.settings.font_size }}px;
+    text-align: {{ block.settings.text_alignment }};
+    color: {{ block.settings.text_color }};
+    line-height: {{ block.settings.line_height }};
+    letter-spacing: {{ block.settings.letter_spacing }}px;
+    white-space: {{ block.settings.white_space }};
+    padding-top: {{ block.settings.padding_top }}px;
+    padding-bottom: {{ block.settings.padding_bottom }}px;
+    margin: 0;
+  }
+{% endstyle %}
+
+{% case block.settings.html_tag %}
+  {% when 'paragraph' %}
+    <div class="ai-advanced-richtext-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+      {{ block.settings.content }}
+    </div>
+  {% when 'h1' %}
+    <h1 class="ai-advanced-richtext-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+      {{ block.settings.content }}
+    </h1>
+  {% when 'h2' %}
+    <h2 class="ai-advanced-richtext-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+      {{ block.settings.content }}
+    </h2>
+  {% when 'h3' %}
+    <h3 class="ai-advanced-richtext-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+      {{ block.settings.content }}
+    </h3>
+  {% when 'h4' %}
+    <h4 class="ai-advanced-richtext-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+      {{ block.settings.content }}
+    </h4>
+  {% when 'h5' %}
+    <h5 class="ai-advanced-richtext-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+      {{ block.settings.content }}
+    </h5>
+  {% when 'h6' %}
+    <h6 class="ai-advanced-richtext-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+      {{ block.settings.content }}
+    </h6>
+{% endcase %}
+
+{% schema %}
+{
+  "name": "Advanced rich text",
+  "tag": null,
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Content",
+      "default": "<p>Add your text here</p>"
+    },
+    {
+      "type": "header",
+      "content": "HTML tag"
+    },
+    {
+      "type": "select",
+      "id": "html_tag",
+      "label": "Tag type",
+      "options": [
+        {
+          "value": "paragraph",
+          "label": "Paragraph"
+        },
+        {
+          "value": "h1",
+          "label": "Heading 1"
+        },
+        {
+          "value": "h2",
+          "label": "Heading 2"
+        },
+        {
+          "value": "h3",
+          "label": "Heading 3"
+        },
+        {
+          "value": "h4",
+          "label": "Heading 4"
+        },
+        {
+          "value": "h5",
+          "label": "Heading 5"
+        },
+        {
+          "value": "h6",
+          "label": "Heading 6"
+        }
+      ],
+      "default": "paragraph"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "label": "Font size",
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        },
+        {
+          "value": "justify",
+          "label": "Justify"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#373a36"
+    },
+    {
+      "type": "range",
+      "id": "line_height",
+      "label": "Line height",
+      "min": 1,
+      "max": 3,
+      "step": 0.1,
+      "default": 1.5
+    },
+    {
+      "type": "range",
+      "id": "letter_spacing",
+      "label": "Letter spacing",
+      "min": -2,
+      "max": 10,
+      "step": 0.5,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Text wrapping"
+    },
+    {
+      "type": "select",
+      "id": "white_space",
+      "label": "Line breaks",
+      "options": [
+        {
+          "value": "normal",
+          "label": "Normal"
+        },
+        {
+          "value": "nowrap",
+          "label": "No wrap"
+        },
+        {
+          "value": "pre-wrap",
+          "label": "Preserve formatting"
+        }
+      ],
+      "default": "normal"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "Advanced rich text"
+    }
+  ]
+}
+{% endschema %}
