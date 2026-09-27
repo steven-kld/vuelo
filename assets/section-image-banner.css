@@ -475,6 +475,25 @@
   margin-top: 2rem;
 }
 
+.banner__conditions {
+  margin-bottom: 0;
+}
+
+.banner__box > * + .banner__conditions {
+  margin-top: 1rem;
+}
+
+.banner__links {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 2rem;
+  word-break: break-word;
+}
+
+.banner__box > * + .banner__links {
+  margin-top: 1rem;
+}
+
 @media screen and (max-width: 749px) {
   .banner:not(.slideshow) .rte a,
   .banner:not(.slideshow) .inline-richtext a:hover,

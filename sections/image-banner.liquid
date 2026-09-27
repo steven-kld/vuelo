@@ -120,12 +120,18 @@
       {%- for block in section.blocks -%}
         {%- case block.type -%}
           {%- when 'heading' -%}
-            <h2
+            {%- liquid
+              assign heading_tag = 'h2'
+              if block.settings.heading_tag == 'h1'
+                assign heading_tag = 'h1'
+              endif
+            -%}
+            <{{ heading_tag }}
               class="banner__heading inline-richtext {{ block.settings.heading_size }}"
               {{ block.shopify_attributes }}
             >
               {{ block.settings.heading }}
-            </h2>
+            </{{ heading_tag }}>
           {%- when 'text' -%}
             <div class="banner__text rte {{ block.settings.text_style }}" {{ block.shopify_attributes }}>
               <p>{{ block.settings.text }}</p>
@@ -160,6 +166,50 @@
                 </a>
               {%- endif -%}
             </div>
+            {%- if block.settings.show_min_order -%}
+              {%- liquid
+                # Порог дублирует приложение Melon Order Limits и snippets/min-order-progress.liquid — см. CLAUDE.md
+                assign min_order_threshold = 2800000
+                assign min_order_formatted = min_order_threshold | money | strip_html
+                assign shipping_url = pages['valores-de-despacho-por-comunas-en-santiago'].url
+              -%}
+              <p class="banner__conditions caption">
+                Pedido mínimo {{ min_order_formatted }} ·
+                {% if shipping_url != blank -%}
+                  <a href="{{ shipping_url }}" class="link">despacho según tu comuna</a>
+                {%- else -%}
+                  despacho según tu comuna
+                {%- endif %}
+              </p>
+            {%- endif -%}
+            {%- if block.settings.link_label_1 != blank or block.settings.link_label_2 != blank -%}
+              <div class="banner__links">
+                {%- if block.settings.link_label_1 != blank -%}
+                  <a
+                    {% if block.settings.link_1 == blank %}
+                      role="link" aria-disabled="true"
+                    {% else %}
+                      href="{{ block.settings.link_1 }}"
+                    {% endif %}
+                    class="link"
+                  >
+                    {{- block.settings.link_label_1 | escape -}}
+                  </a>
+                {%- endif -%}
+                {%- if block.settings.link_label_2 != blank -%}
+                  <a
+                    {% if block.settings.link_2 == blank %}
+                      role="link" aria-disabled="true"
+                    {% else %}
+                      href="{{ block.settings.link_2 }}"
+                    {% endif %}
+                    class="link"
+                  >
+                    {{- block.settings.link_label_2 | escape -}}
+                  </a>
+                {%- endif -%}
+              </div>
+            {%- endif -%}
         {%- endcase -%}
       {%- endfor -%}
     </div>
@@ -399,6 +449,23 @@
           ],
           "default": "h1",
           "label": "t:sections.all.heading_size.label"
+        },
+        {
+          "type": "select",
+          "id": "heading_tag",
+          "options": [
+            {
+              "value": "h2",
+              "label": "h2"
+            },
+            {
+              "value": "h1",
+              "label": "h1"
+            }
+          ],
+          "default": "h2",
+          "label": "HTML tag",
+          "info": "на странице только один h1"
         }
       ]
     },
@@ -483,6 +550,41 @@
           "id": "button_style_secondary_2",
           "default": false,
           "label": "t:sections.image-banner.blocks.buttons.settings.button_style_secondary_2.label"
+        },
+        {
+          "type": "header",
+          "content": "Minimum order"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_min_order",
+          "default": false,
+          "label": "Show minimum order line",
+          "info": "Pedido mínimo … · despacho según tu comuna"
+        },
+        {
+          "type": "header",
+          "content": "Text links"
+        },
+        {
+          "type": "text",
+          "id": "link_label_1",
+          "label": "Link label 1"
+        },
+        {
+          "type": "url",
+          "id": "link_1",
+          "label": "Link 1"
+        },
+        {
+          "type": "text",
+          "id": "link_label_2",
+          "label": "Link label 2"
+        },
+        {
+          "type": "url",
+          "id": "link_2",
+          "label": "Link 2"
         }
       ]
     }

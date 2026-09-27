@@ -33,3 +33,5 @@
    — правится в визуальном редакторе Shopify (или в JSON — только после согласования).
 4. Объявление «Pedido minimo desde 28.000 más despacho» — announcement bar в шапке
    (`sections/header-group.json`, в репо нет), правится в визуальном редакторе.
+5. `sections/image-banner.liquid` — `min_order_threshold` (в сотых, как в п. 2): строка «Pedido mínimo … ·
+   despacho según tu comuna» под кнопкой hero главной (блок buttons, чекбокс `show_min_order`).

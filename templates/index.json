@@ -15,7 +15,7 @@
         "text_cpajJ3": {
           "type": "text",
           "settings": {
-            "text": "Tallos frescos de productores seleccionados en Colombia, Ecuador y flores de estación. Elige las variedades y cantidades que quieras y crea tu propia composición",
+            "text": "Flores frescas por tallo, directo de Ecuador y Colombia. Elige las variedades y la cantidad que quieras. Pide antes de las 17:00 y llega mañana.",
             "text_style": "body"
           }
         },
@@ -23,24 +23,30 @@
           "type": "heading",
           "settings": {
             "heading": "FLORES FRESCAS SIN ESCALAS",
-            "heading_size": "hxl"
+            "heading_size": "hxl",
+            "heading_tag": "h1"
           }
         },
         "buttons_XVyfng": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Ver todo",
+            "button_label_1": "Comprar por tallo",
             "button_link_1": "shopify://collections/todos-los-productos",
             "button_style_secondary_1": false,
-            "button_label_2": "Comprar por categorías",
-            "button_link_2": "shopify://pages/compra-por-colecciones",
-            "button_style_secondary_2": false
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false,
+            "show_min_order": true,
+            "link_label_1": "Por largo de tallo",
+            "link_1": "/#por-largo-de-tallo",
+            "link_label_2": "",
+            "link_2": ""
           }
         }
       },
       "block_order": [
-        "text_cpajJ3",
         "heading_qYFjbj",
+        "text_cpajJ3",
         "buttons_XVyfng"
       ],
       "name": "t:sections.image-banner.presets.name",
@@ -84,6 +90,7 @@
       ],
       "name": "t:sections.rich-text.presets.name",
       "settings": {
+        "anchor_id": "por-largo-de-tallo",
         "desktop_content_position": "center",
         "content_alignment": "center",
         "color_scheme": "scheme-1",
