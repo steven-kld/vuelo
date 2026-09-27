@@ -64,6 +64,11 @@
   endif
 -%}
 
+{%- comment -%}
+  Без товаров в коллекции (пустое метаполе у vase_collection / similar_flowers_collection) секция
+  на сайте не выводится; заглушки остаются только в редакторе тем.
+{%- endcomment -%}
+{%- if section.settings.collection.products.size > 0 or request.design_mode -%}
 <div
   class="color-{{ section.settings.color_scheme }} isolate gradient"
 >
@@ -213,6 +218,7 @@
     {%- endif -%}
   </div>
 </div>
+{%- endif -%}
 
 {% schema %}
 {
