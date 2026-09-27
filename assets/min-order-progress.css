@@ -31,3 +31,7 @@
 .min-order-progress--cart {
   margin: 1.2rem 0;
 }
+
+.min-order-progress__shipping {
+  margin: 0.8rem 0 0;
+}

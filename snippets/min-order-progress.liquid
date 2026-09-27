@@ -54,6 +54,13 @@
       }
     </script>
   </min-order-progress>
+
+  {%- assign mop_shipping_url = pages['valores-de-despacho-por-comunas-en-santiago'].url -%}
+  {%- if mop_shipping_url != blank -%}
+    <p class="min-order-progress__shipping caption">
+      Despacho según tu comuna — <a href="{{ mop_shipping_url }}" class="link">ver tarifas</a>
+    </p>
+  {%- endif -%}
 {%- elsif mode == 'cart' and cart.item_count > 0 -%}
   {%- liquid
     # Без JS: cart.js перерисовывает .js-contents футера корзины при каждом изменении
