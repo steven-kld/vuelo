@@ -31,3 +31,5 @@
 3. Текст вкладки «Información adicional» («El monto mínimo de compra es de $28.000 CLP…») в
    `templates/product.template-1.json`, `product.template-2-short.json`, `product.template-decor.json`
    — правится в визуальном редакторе Shopify (или в JSON — только после согласования).
+4. Объявление «Pedido minimo desde 28.000 más despacho» — announcement bar в шапке
+   (`sections/header-group.json`, в репо нет), правится в визуальном редакторе.
