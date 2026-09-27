@@ -7,16 +7,10 @@
   margin: 0 0 0.6rem;
 }
 
-/* Резерв высоты на карточке: смена текста JS-ом не двигает вёрстку.
+/* Резерв высоты на карточке под 2 строки: смена текста JS-ом не двигает вёрстку.
    Высота строки — как у body в теме: calc(1 + 0.8 / var(--font-body-scale)) */
 min-order-progress .min-order-progress__text {
   min-height: calc(2em * (1 + 0.8 / var(--font-body-scale, 1)));
-}
-
-@media screen and (min-width: 990px) {
-  min-order-progress .min-order-progress__text {
-    min-height: calc(1em * (1 + 0.8 / var(--font-body-scale, 1)));
-  }
 }
 
 .min-order-progress--unavailable .min-order-progress__status {

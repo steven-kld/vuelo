@@ -36,10 +36,10 @@
 
     if cart.total_price >= min_order_threshold
       assign mop_text = mop_text_reached
-    elsif cart.total_price == 0
-      assign mop_text = mop_text_minimum | replace: '{T}', mop_threshold_formatted
     elsif mop_missing <= 0
       assign mop_text = mop_text_selection_completes
+    elsif cart.total_price == 0
+      assign mop_text = mop_text_minimum | replace: '{T}', mop_threshold_formatted
     else
       assign mop_missing_formatted = mop_missing | money | strip_html
       assign mop_text = mop_text_missing | replace: '{Y}', mop_missing_formatted
