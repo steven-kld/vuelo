@@ -405,6 +405,11 @@
   }
 }
 
+/* Несколько текстовых блоков подряд — как перенос строки, без большого отступа */
+.banner__box > .banner__text + .banner__text {
+  margin-top: 0.4rem;
+}
+
 .banner__box > * + * {
   margin-top: 1rem;
 }
