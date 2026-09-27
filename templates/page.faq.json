@@ -1,0 +1,398 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_qc3zhK": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_WiaNQg": {
+          "type": "heading",
+          "settings": {
+            "heading": "Preguntas frecuentes",
+            "heading_size": "h1"
+          }
+        },
+        "text_FdCpen": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Todo lo que necesitas saber sobre nuestros productos, entregas y servicios</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_WiaNQg",
+        "text_FdCpen"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "collapsible_content_tX9dwg": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_AViPiE": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "¿Por qué los precios de Vuelo Floral son más accesibles que los de una florería tradicional?",
+            "icon": "question_mark",
+            "row_content": "<p>Porque somos un modelo directo al consumidor: no cobramos de más por diseño elaborado ni empaques de lujo. Vendemos tallos frescos, listos para que tú los organices como quieras.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_QGmCjt": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "¿Por qué no son los precios más bajos del mercado?",
+            "icon": "question_mark",
+            "row_content": "<p>Porque no todo lo barato es ahorro. El transporte marítimo desde Colombia o Ecuador es más económico, pero puede tardar hasta dos semanas y las flores llegan ya envejecidas. Nosotros priorizamos el transporte aéreo: es más caro, pero garantiza flores realmente frescas que duran más en tu casa. Pagar un poco más por flores que sí te van a durar es, al final, la opción más razonable — no la más barata.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_jx8bKh": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "¿Por qué las flores de Vuelo Floral duran más tiempo frescas?",
+            "icon": "question_mark",
+            "row_content": "<p>Porque viajan por avión, no por barco. El transporte marítimo desde Colombia o Ecuador puede tardar hasta 2 semanas; nuestras flores llegan por vía aérea en menos de 48 horas desde el corte, lo que traduce en mayor frescura y una vida útil más larga en tu casa.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_iYhPdB": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "¿De dónde provienen sus flores?",
+            "icon": "question_mark",
+            "row_content": "<p>Trabajamos con tallos frescos de productores seleccionados en Colombia, Ecuador y flores de estación. Recibimos flores frescas de forma regular y gracias a una logística eficiente, las flores conservan mejor su frescura y belleza durante más tiempo.<br/><br/></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_UVPjQ6": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "¿Puedo comprar flores por tallo?",
+            "icon": "question_mark",
+            "row_content": "<p>Sí. Puedes elegir las variedades que prefieras y comprar solo la cantidad de tallos que necesites — 3, 5, 10 o los que quieras — sin obligarte a comprar un paquete completo de una sola variedad. Así logras la combinación y el color exactos para tu arreglo, sin sobras ni desperdicio: una forma más sustentable económica de comprar flores.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_aQq4xE": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "¿Es necesario ser florista para crear un arreglo bonito?",
+            "icon": "question_mark",
+            "row_content": "<p>No. Para cada variedad indicamos la altura del tallo, el tamaño de la flor, su duración en florero y recomendaciones de uso, para que elegir sea fácil y sencillo.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_UEnbV6": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "¿Cuánto duran las flores?",
+            "icon": "question_mark",
+            "row_content": "<p>La duración depende de cada variedad. En la ficha de cada producto encontrarás una estimación de su vida en florero siguiendo los cuidados recomendados.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_KnVr3j": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "¿Cómo debo cuidar las flores después de recibirlas?",
+            "icon": "question_mark",
+            "row_content": "<p>Cada flor tiene sus propias características y necesidades de cuidado. En la ficha de cada producto encontrarás recomendaciones específicas para ayudar a conservar su frescura durante más tiempo. En general, recomendamos recortar los tallos, utilizar agua limpia, cambiarla regularmente y añadir alimento floral cuando sea posible.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_N6RV9Q": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "¿Qué sucede si la flor que busco no está disponible?",
+            "icon": "question_mark",
+            "row_content": "<p>Algunas variedades solo están disponibles durante determinadas temporadas. Si una flor está temporalmente agotada, puedes suscribirte para recibir una notificación cuando vuelva a estar disponible.</p><h3></h3>",
+            "page": ""
+          }
+        },
+        "collapsible_row_eQmKYM": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "¿Venden accesorios para el cuidado de flores?",
+            "icon": "question_mark",
+            "row_content": "<p>Sí. En nuestro catálogo encontrarás floreros, tijeras de jardín y alimento floral para ayudarte a prolongar la frescura de tus composiciones.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_GLxq44": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "¿Las flores llegan armadas en un ramo?",
+            "icon": "question_mark",
+            "row_content": "<p>No. Las flores llegan en empaque técnico de transporte, no en envoltorio de regalo. Tú eliges las variedades y armas tu propia composición en el espacio que prefieras.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_YKtphz": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "¿Cómo preparan las flores antes de enviarlas?",
+            "icon": "question_mark",
+            "row_content": "<p>1. Corte en bisel (recorte del tallo en ángulo)<br/>2. Deshoje (retiro de hojas bajo el agua)<br/>3. Hidratación / reposo en frío<br/>4. Empaque técnico en cadena de frío hasta tu puerta</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_AViPiE",
+        "collapsible_row_QGmCjt",
+        "collapsible_row_jx8bKh",
+        "collapsible_row_iYhPdB",
+        "collapsible_row_UVPjQ6",
+        "collapsible_row_aQq4xE",
+        "collapsible_row_UEnbV6",
+        "collapsible_row_KnVr3j",
+        "collapsible_row_N6RV9Q",
+        "collapsible_row_eQmKYM",
+        "collapsible_row_GLxq44",
+        "collapsible_row_YKtphz"
+      ],
+      "name": "t:sections.collapsible_content.presets.name",
+      "settings": {
+        "caption": "",
+        "heading": "Flores y cuidado",
+        "heading_size": "h1",
+        "heading_alignment": "left",
+        "layout": "none",
+        "container_color_scheme": "",
+        "color_scheme": "",
+        "open_first_collapsible_row": true,
+        "image": "shopify://shop_images/8b8a343cc3ad2c31accfc1ac314a82ba.jpg",
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "collapsible_content_wdqibT": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_7J3w43": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "¿Ofrecen servicios para eventos corporativos y celebraciones?",
+            "icon": "question_mark",
+            "row_content": "<p>No nos dedicamos a la decoración ni al montaje floral de eventos puntuales. Sin embargo, si trabajamos con hoteles, oficinas y locales comerciales que buscan flores frescas de forma regular. Podemos ayudarte con la compra de flores para tu florista o decorador si estás organizando un evento.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_rYGERg": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "¿En qué días realizan entregas?",
+            "icon": "question_mark",
+            "row_content": "<p>Las fechas de entrega disponibles se muestran durante el proceso de compra. Recomendamos realizar tu pedido con anticipación, especialmente durante períodos de alta demanda.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_8dxLNR": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "¿Puedo modificar o cancelar mi pedido?",
+            "icon": "question_mark",
+            "row_content": "<p>Si tu pedido aún no ha sido preparado para despacho, contáctanos lo antes posible. La posibilidad de realizar cambios o cancelaciones dependerá del estado de procesamiento del pedido. Si el pedido ya fue preparado o armado para su despacho, no será posible cancelarlo.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_9hzcT3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "¿Qué debo hacer si las flores llegan en mal estado?",
+            "icon": "question_mark",
+            "row_content": "<p>Si existe algún problema con tu pedido, contáctanos lo antes posible y adjunta fotografías. Revisaremos cada caso de forma individual y buscaremos la mejor solución.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_UxVT3T": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "¿Durante cuánto tiempo puedo solicitar un cambio o reposición?",
+            "icon": "question_mark",
+            "row_content": "<p>Las flores son productos delicados que, por naturaleza, experimentan cambios y transformaciones a lo largo de su ciclo de vida. Por este motivo, ofrecemos cambios o reposiciones dentro de las primeras 24 horas posteriores a la entrega si las flores fueron recibidas en condiciones insatisfactorias.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_yzh73R": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "¿La política de cambios y reposiciones aplica a pedidos realizados mediante servicios externos?",
+            "icon": "question_mark",
+            "row_content": "<p>No. No realizamos cambios ni reposiciones para compras efectuadas a través de servicios externos como Rappi, Uber Eats u otras plataformas similares.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_MEfnwT": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "¿Existe un monto mínimo de compra?",
+            "icon": "question_mark",
+            "row_content": "<p>Sí. El monto mínimo de compra es de <strong>$28.000 CLP</strong>. Esto nos permite mantener la calidad de nuestro servicio, preparar cada pedido con cuidado y garantizar que las flores lleguen frescas y en las mejores condiciones.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_7J3w43",
+        "collapsible_row_rYGERg",
+        "collapsible_row_8dxLNR",
+        "collapsible_row_9hzcT3",
+        "collapsible_row_UxVT3T",
+        "collapsible_row_yzh73R",
+        "collapsible_row_MEfnwT"
+      ],
+      "name": "t:sections.collapsible_content.presets.name",
+      "settings": {
+        "caption": "",
+        "heading": "Pedidos y entregas",
+        "heading_size": "h1",
+        "heading_alignment": "left",
+        "layout": "none",
+        "container_color_scheme": "",
+        "color_scheme": "",
+        "open_first_collapsible_row": true,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "collapsible_content_8qYXhL": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_HMDzyd": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "¿Cómo funciona la suscripción de flores?",
+            "icon": "question_mark",
+            "row_content": "<p>Elige la frecuencia que prefieras (semanal, cada 14 días o mensual) y nosotros nos encargamos de preparar, programar y entregar tus flores automáticamente.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_8qx74j": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "¿Cuándo se realizan las siguientes entregas?",
+            "icon": "question_mark",
+            "row_content": "<p>Las entregas se programan en función de la fecha de tu primer pedido. Por ejemplo, si realizas tu compra un viernes, las futuras entregas se programarán para los viernes correspondientes según la frecuencia seleccionada.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_hQJrCG": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "¿Puedo suscribirme a varias flores diferentes?",
+            "icon": "question_mark",
+            "row_content": "<p>Sí. Cada suscripción corresponde a un producto específico. Si deseas recibir distintas variedades de flores de forma recurrente, deberás contratar una suscripción independiente para cada producto.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_4DqCmC": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "¿Necesito hacer un nuevo pedido cada vez?",
+            "icon": "question_mark",
+            "row_content": "<p>No. Una vez activada tu suscripción, las futuras entregas se generan automáticamente según el calendario de tu plan.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_hQeCmq": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "¿Para quién está pensada la suscripción?",
+            "icon": "question_mark",
+            "row_content": "<p>Es una excelente opción para hogares, oficinas, hoteles, restaurantes, cafeterías y empresas que desean disfrutar de flores frescas de manera regular sin preocuparse por realizar pedidos frecuentes.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_LPCYr8": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "¿Cómo se realiza el cobro de la suscripción?",
+            "icon": "question_mark",
+            "row_content": "<p>Los cobros se realizan automáticamente según la frecuencia seleccionada en tu plan de suscripción.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_JAhrGN": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "¿Puedo cancelar mi suscripción?",
+            "icon": "question_mark",
+            "row_content": "<p>Sí. La suscripción puede cancelarse una vez completados el pedido inicial y la primera entrega recurrente. Para cancelar tu suscripción, ponte en contacto con nuestro equipo de atención al cliente a través de nuestro correo electrónico de soporte.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_qkRT7n": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "¿Qué ocurre si quiero recibir flores diferentes en fechas distintas?",
+            "icon": "question_mark",
+            "row_content": "<p>En ese caso te recomendamos utilizar la opción de compra única. Cada producto cuenta con su propio calendario de entrega, lo que te permite seleccionar fechas específicas para cada variedad de flores.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_HMDzyd",
+        "collapsible_row_8qx74j",
+        "collapsible_row_hQJrCG",
+        "collapsible_row_4DqCmC",
+        "collapsible_row_hQeCmq",
+        "collapsible_row_LPCYr8",
+        "collapsible_row_JAhrGN",
+        "collapsible_row_qkRT7n"
+      ],
+      "disabled": true,
+      "name": "t:sections.collapsible_content.presets.name",
+      "settings": {
+        "caption": "",
+        "heading": "Suscripciones y empresas",
+        "heading_size": "h1",
+        "heading_alignment": "left",
+        "layout": "none",
+        "container_color_scheme": "",
+        "color_scheme": "",
+        "open_first_collapsible_row": true,
+        "image": "shopify://shop_images/85bb14a7d5038db7e0c937a40d2a0b38.jpg",
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_qc3zhK",
+    "collapsible_content_tX9dwg",
+    "collapsible_content_wdqibT",
+    "collapsible_content_8qYXhL"
+  ]
+}

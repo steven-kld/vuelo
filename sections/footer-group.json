@@ -1,0 +1,78 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "178111115789e6a465": {
+      "type": "apps",
+      "blocks": {
+        "melon_order_limits_app_block_mRt7UW": {
+          "type": "shopify://apps/melon-order-limits/blocks/app-block/91904755-64ba-4bc5-85c6-2e5708522f2b",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "melon_order_limits_app_block_mRt7UW"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "brand_information_zaVnDk": {
+          "type": "brand_information",
+          "settings": {
+            "show_social": true
+          }
+        },
+        "link_list_n79F9N": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Terminal Vuelo Floral",
+            "menu": "terminal-vuelo-floral"
+          }
+        },
+        "link_list_atC7xD": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Información legal",
+            "menu": "informaci-n-legal"
+          }
+        }
+      },
+      "block_order": [
+        "brand_information_zaVnDk",
+        "link_list_n79F9N",
+        "link_list_atC7xD"
+      ],
+      "settings": {
+        "color_scheme": "scheme-4",
+        "newsletter_enable": false,
+        "newsletter_heading": "Subscribe to our emails",
+        "enable_follow_on_shop": true,
+        "show_social": false,
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "payment_enable": true,
+        "show_policy": false,
+        "margin_top": 0,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    }
+  },
+  "order": [
+    "178111115789e6a465",
+    "footer"
+  ]
+}
