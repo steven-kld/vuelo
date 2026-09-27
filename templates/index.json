@@ -12,13 +12,6 @@
     "image_banner_PrcWJW": {
       "type": "image-banner",
       "blocks": {
-        "text_cpajJ3": {
-          "type": "text",
-          "settings": {
-            "text": "Flores sueltas, a tu manera. Elige tus flores una a una.",
-            "text_style": "body"
-          }
-        },
         "heading_qYFjbj": {
           "type": "heading",
           "settings": {
@@ -27,17 +20,24 @@
             "heading_tag": "h1"
           }
         },
+        "text_cpajJ3": {
+          "type": "text",
+          "settings": {
+            "text": "<strong>Flores frescas de Ecuador, Colombia y producción nacional. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</strong> Elige las variedades y la cantidad que quieras. Pide antes de las 17:00 y llega mañana.",
+            "text_style": "body"
+          }
+        },
         "buttons_XVyfng": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Elegir flores",
+            "button_label_1": "Comprar por unidad",
             "button_link_1": "shopify://collections/todos-los-productos",
             "button_style_secondary_1": false,
             "button_label_2": "",
             "button_link_2": "",
             "button_style_secondary_2": false,
             "show_min_order": true,
-            "link_label_1": "Por tamaño",
+            "link_label_1": "Por largo de tallo",
             "link_1": "/#por-largo-de-tallo",
             "link_label_2": "",
             "link_2": ""
@@ -74,6 +74,78 @@
         "padding_bottom": 0
       }
     },
+    "featured_collection_ntDHrg": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.presets.name",
+      "settings": {
+        "collection": "llegadas-recientes",
+        "products_to_show": 8,
+        "title": "Fresh Arrival",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 4,
+        "enable_desktop_slider": false,
+        "full_width": true,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 80
+      }
+    },
+    "1780068513491070b0": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_a7795f6_4zUXgG": {
+          "type": "ai_gen_block_a7795f6",
+          "settings": {
+            "content": "<p>Elige las flores. Nosotros las llevamos frescas.</p>",
+            "html_tag": "h2",
+            "font_size": 70,
+            "text_alignment": "center",
+            "text_color": "#373a36",
+            "line_height": 1,
+            "letter_spacing": 0,
+            "white_space": "normal",
+            "padding_top": 0,
+            "padding_bottom": 0
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_a7795f6_como01": {
+          "type": "ai_gen_block_a7795f6",
+          "settings": {
+            "content": "<p>Compra las variedades y cantidades de tallos que quieras para crear tu propia composición. Se entregan protegidas, sin armado de ramo ni empaque de regalo.</p>",
+            "html_tag": "paragraph",
+            "font_size": 18,
+            "text_alignment": "center",
+            "text_color": "#373a36",
+            "line_height": 1.5,
+            "letter_spacing": 0,
+            "white_space": "normal",
+            "padding_top": 16,
+            "padding_bottom": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_a7795f6_4zUXgG",
+        "ai_gen_block_a7795f6_como01"
+      ],
+      "name": "Rich text (ai)",
+      "settings": {}
+    },
     "rich_text_NdqaMY": {
       "type": "rich-text",
       "blocks": {
@@ -90,13 +162,13 @@
       ],
       "name": "t:sections.rich-text.presets.name",
       "settings": {
-        "anchor_id": "por-largo-de-tallo",
         "desktop_content_position": "center",
         "content_alignment": "center",
         "color_scheme": "scheme-1",
         "full_width": true,
         "padding_top": 40,
-        "padding_bottom": 52
+        "padding_bottom": 52,
+        "anchor_id": "por-largo-de-tallo"
       }
     },
     "1780058827aa4ae367": {
@@ -149,52 +221,8 @@
       "name": "Collection list",
       "settings": {}
     },
-    "1780068513491070b0": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_a7795f6_4zUXgG": {
-          "type": "ai_gen_block_a7795f6",
-          "settings": {
-            "content": "<p>Elige las flores. Nosotros las llevamos frescas.</p>",
-            "html_tag": "h2",
-            "font_size": 70,
-            "text_alignment": "center",
-            "text_color": "#373a36",
-            "line_height": 1,
-            "letter_spacing": 0,
-            "white_space": "normal",
-            "padding_top": 0,
-            "padding_bottom": 0
-          },
-          "blocks": {}
-        },
-        "ai_gen_block_a7795f6_como01": {
-          "type": "ai_gen_block_a7795f6",
-          "settings": {
-            "content": "<p>Compra las variedades y la cantidad de flores que quieras para crear tu propia composición. Se entregan protegidas, sin armado de ramo ni empaque de regalo.</p>",
-            "html_tag": "paragraph",
-            "font_size": 18,
-            "text_alignment": "center",
-            "text_color": "#373a36",
-            "line_height": 1.5,
-            "letter_spacing": 0,
-            "white_space": "normal",
-            "padding_top": 16,
-            "padding_bottom": 0
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_a7795f6_4zUXgG",
-        "ai_gen_block_a7795f6_como01"
-      ],
-      "name": "Rich text (ai)",
-      "settings": {}
-    },
     "multirow_qcfJCc": {
       "type": "multirow",
-      "disabled": true,
       "blocks": {
         "row_HJHeDw": {
           "type": "row",
@@ -248,6 +276,7 @@
         "row_pir7DU",
         "row_3MATNE"
       ],
+      "disabled": true,
       "name": "t:sections.multirow.presets.name",
       "settings": {
         "image_height": "adapt",
@@ -329,7 +358,7 @@
           "type": "ai_gen_block_a7795f6",
           "name": "Advanced rich text",
           "settings": {
-            "content": "<p>Flores que llegan a Chile en días en vez de semanas</p>",
+            "content": "<p><em>     Flores </em>que aún conservan la frescura <em>del viaje</em></p>",
             "html_tag": "paragraph",
             "font_size": 70,
             "text_alignment": "center",
@@ -345,15 +374,15 @@
         "ai_gen_block_a7795f6_9K6ERR": {
           "type": "ai_gen_block_a7795f6",
           "settings": {
-            "content": "<p>La mayoría de las flores importadas llegan a Chile por barco, en unas 2 semanas. Las nuestras vuelan y llegan en días.</p>",
-            "html_tag": "paragraph",
-            "font_size": 18,
+            "content": "<p></p><p></p>",
+            "html_tag": "h3",
+            "font_size": 70,
             "text_alignment": "center",
             "text_color": "#373a36",
-            "line_height": 1.5,
+            "line_height": 1,
             "letter_spacing": 0,
             "white_space": "normal",
-            "padding_top": 16,
+            "padding_top": 0,
             "padding_bottom": 0
           },
           "blocks": {}
@@ -383,35 +412,6 @@
         "show_text_below": false
       }
     },
-    "featured_collection_ntDHrg": {
-      "type": "featured-collection",
-      "name": "t:sections.featured-collection.presets.name",
-      "settings": {
-        "collection": "llegadas-recientes",
-        "products_to_show": 8,
-        "title": "Recién llegadas",
-        "heading_size": "h1",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "columns_desktop": 4,
-        "enable_desktop_slider": false,
-        "full_width": true,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "color_scheme": "",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 0,
-        "padding_bottom": 80
-      }
-    },
     "image_banner_DyUyaX": {
       "type": "image-banner",
       "blocks": {
@@ -419,7 +419,8 @@
           "type": "heading",
           "settings": {
             "heading": "Suscripción de flores",
-            "heading_size": "h0"
+            "heading_size": "h0",
+            "heading_tag": "h2"
           }
         },
         "text_DXXwtP": {
@@ -437,7 +438,12 @@
             "button_style_secondary_1": false,
             "button_label_2": "",
             "button_link_2": "",
-            "button_style_secondary_2": false
+            "button_style_secondary_2": false,
+            "show_min_order": false,
+            "link_label_1": "",
+            "link_1": "",
+            "link_label_2": "",
+            "link_2": ""
           }
         }
       },
@@ -483,7 +489,8 @@
         "color_scheme": "",
         "full_width": true,
         "padding_top": 80,
-        "padding_bottom": 20
+        "padding_bottom": 20,
+        "anchor_id": ""
       }
     },
     "1780662718b7764603": {
@@ -653,16 +660,16 @@
           "settings": {
             "heading": "¿De dónde provienen sus flores?",
             "icon": "question_mark",
-            "row_content": "<p>Trabajamos con flores frescas de productores seleccionados en Colombia, Ecuador y flores de estación. Recibimos flores frescas de forma regular y gracias a una logística eficiente, las flores conservan mejor su frescura y belleza durante más tiempo.</p>",
+            "row_content": "<p>Trabajamos con tallos frescos de productores seleccionados en Colombia, Ecuador y flores de estación. Recibimos flores frescas de forma regular y gracias a una logística eficiente, las flores conservan mejor su frescura y belleza durante más tiempo.</p>",
             "page": ""
           }
         },
         "collapsible_row_RMYQgt": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "¿Puedo comprar flores por unidad?",
+            "heading": "¿Puedo comprar flores por tallo?",
             "icon": "question_mark",
-            "row_content": "<p>Sí. Puedes seleccionar las variedades que prefieras y añadir la cantidad de flores que necesites para crear tu propia composición.</p>",
+            "row_content": "<p>Sí. Puedes seleccionar las variedades que prefieras y añadir la cantidad de tallos que necesites para crear tu propia composición.</p>",
             "page": ""
           }
         },
@@ -675,12 +682,22 @@
             "row_content": "<p>Sí. Puedes suscribirte y recibir flores frescas de forma periódica según la frecuencia que prefieras, sin necesidad de realizar un nuevo pedido cada vez.</p>",
             "page": ""
           }
+        },
+        "collapsible_row_LeV4Eg": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "¿Durante cuánto tiempo puedo solicitar un cambio o reposición?",
+            "icon": "question_mark",
+            "row_content": "<p>Las flores son productos delicados que, por naturaleza, experimentan cambios a lo largo de su ciclo de vida. Por este motivo, ofrecemos cambios o reposiciones dentro de las primeras 24 horas posteriores a la entrega si las flores fueron recibidas en condiciones insatisfactorias.</p>",
+            "page": ""
+          }
         }
       },
       "block_order": [
         "collapsible_row_np36mn",
         "collapsible_row_RMYQgt",
-        "collapsible_row_YQeXqz"
+        "collapsible_row_YQeXqz",
+        "collapsible_row_LeV4Eg"
       ],
       "name": "t:sections.collapsible_content.presets.name",
       "settings": {
