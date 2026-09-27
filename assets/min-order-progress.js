@@ -116,8 +116,6 @@ if (!customElements.get('min-order-progress')) {
             .replace('{T}', () => data.thresholdFormatted)
             .replace('{Y}', () => this.formatMoney(Math.max(missing, 0), data.moneyFormat));
 
-        this.updateSelectedNote(qty);
-
         // Остаток склада исчерпан выбором/корзиной — текст для подсказки у «+»
         this.stockText = null;
         if (data.stockLimited && maxAdd !== null && qty >= maxAdd) {
@@ -154,15 +152,6 @@ if (!customElements.get('min-order-progress')) {
           this.formatMoney(projected, data.moneyFormat),
           data.cartTotal >= data.threshold
         );
-      }
-
-      // «Cantidad (3 en el carrito + 4 en tu selección)»: метку перерисовывает product-info.js,
-      // поэтому элемент ищем заново при каждом пересчёте
-      updateSelectedNote(qty) {
-        const note = this.productInfo.querySelector('.quantity__selected-note');
-        if (!note?.dataset.template) return;
-        note.textContent = note.dataset.template.replace('{S}', () => qty);
-        note.hidden = qty === 0;
       }
 
       setupTooltip() {
