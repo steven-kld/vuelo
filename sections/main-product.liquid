@@ -254,6 +254,10 @@
                         assign qty_max = 0
                       endif
                     endif
+
+                    # «Cantidad (3 en el carrito + 4 en tu selección)»; число выбора обновляет min-order-progress.js
+                    assign qty_selected_template = ' + {S} en tu selección'
+                    assign qty_selected_text = qty_selected_template | replace: '{S}', qty_variant.quantity_rule.min
                   -%}
                   <span class="visually-hidden" id="quantity-label-{{ section.id }}">
                     {%- if cart_qty > 0 -%}
@@ -273,7 +277,9 @@
                       <span
                         >(
                         {{- 'products.product.quantity.in_cart_html' | t: quantity: cart_qty -}}
-                        )</span
+                        <span class="quantity__selected-note" data-template="{{ qty_selected_template | escape }}">
+                          {{- qty_selected_text -}}
+                        </span>)</span
                       >
                     </span>
                   </label>

@@ -30,10 +30,12 @@ if (!customElements.get('min-order-progress')) {
           subscribe(PUB_SUB_EVENTS.variantChange, (event) => this.onVariantChange(event)),
         ];
 
+        this.setupTooltip();
         this.update();
       }
 
       disconnectedCallback() {
+        this.teardownTooltip();
         this.productInfo?.removeEventListener('change', this.onQuantityInput);
         this.productInfo?.removeEventListener('input', this.onQuantityInput);
         if (this.onPageShow) window.removeEventListener('pageshow', this.onPageShow);
@@ -86,7 +88,11 @@ if (!customElements.get('min-order-progress')) {
       update() {
         const data = this.data;
         if (this.pending) return;
-        if (!data?.available) return this.render(null);
+        if (!data?.available) {
+          this.stockText = null;
+          this.hideTooltip();
+          return this.render(null);
+        }
 
         const input = this.productInfo.querySelector('.quantity__input');
         const limit = typeof data.limit === 'number' ? data.limit : null;
@@ -102,10 +108,31 @@ if (!customElements.get('min-order-progress')) {
         const texts = data.texts;
         let text;
 
-        if (data.stockLimited && maxAdd !== null && qty >= maxAdd && missing > 0) {
-          if (maxAdd === 0) text = texts.stockAllInCart;
-          else if (data.cartQty > 0) text = texts.stockWithCart;
-          else text = texts.stockOnly;
+        // Функция вместо строки: в суммах есть «$», который replace иначе трактует как шаблон
+        const fill = (template) =>
+          template
+            .replace('{N}', () => limit)
+            .replace('{K}', () => data.cartQty)
+            .replace('{T}', () => data.thresholdFormatted)
+            .replace('{Y}', () => this.formatMoney(Math.max(missing, 0), data.moneyFormat));
+
+        this.updateSelectedNote(qty);
+
+        // Остаток склада исчерпан выбором/корзиной — текст для подсказки у «+»
+        this.stockText = null;
+        if (data.stockLimited && maxAdd !== null && qty >= maxAdd) {
+          if (maxAdd === 0) this.stockText = fill(texts.stockAllInCart);
+          else if (data.cartQty > 0) this.stockText = fill(texts.stockWithCart);
+          else this.stockText = fill(texts.stockOnly);
+        }
+        if (this.stockText) {
+          if (this.tooltip && !this.tooltip.hidden) this.tooltip.textContent = this.stockText;
+        } else {
+          this.hideTooltip();
+        }
+
+        if (this.stockText && missing > 0) {
+          text = this.stockText;
         } else if (data.cartTotal >= data.threshold) {
           text = texts.reached;
         } else if (missing <= 0) {
@@ -121,14 +148,66 @@ if (!customElements.get('min-order-progress')) {
           }
         }
 
-        // Функция вместо строки: в суммах есть «$», который replace иначе трактует как шаблон
-        text = text
-          .replace('{N}', () => limit)
-          .replace('{K}', () => data.cartQty)
-          .replace('{T}', () => data.thresholdFormatted)
-          .replace('{Y}', () => this.formatMoney(Math.max(missing, 0), data.moneyFormat));
+        this.render(fill(text), projected / data.threshold, this.formatMoney(projected, data.moneyFormat));
+      }
 
-        this.render(text, projected / data.threshold, this.formatMoney(projected, data.moneyFormat));
+      // «Cantidad (3 en el carrito + 4 en tu selección)»: метку перерисовывает product-info.js,
+      // поэтому элемент ищем заново при каждом пересчёте
+      updateSelectedNote(qty) {
+        const note = this.productInfo.querySelector('.quantity__selected-note');
+        if (!note?.dataset.template) return;
+        note.textContent = note.dataset.template.replace('{S}', () => qty);
+        note.hidden = qty === 0;
+      }
+
+      setupTooltip() {
+        this.plusButton = this.productInfo.querySelector('.quantity__button[name="plus"]');
+        this.tooltipHost = this.plusButton?.closest('quantity-input');
+        if (!this.tooltipHost) return;
+
+        this.tooltip = document.createElement('span');
+        this.tooltip.className = 'min-order-progress__tooltip caption';
+        this.tooltip.setAttribute('role', 'status');
+        this.tooltip.hidden = true;
+        this.tooltipHost.classList.add('min-order-progress__tooltip-host');
+        this.tooltipHost.append(this.tooltip);
+
+        this.onPlusEnter = () => this.showTooltip();
+        this.onPlusLeave = () => this.hideTooltip();
+        // Нажатие (в т.ч. на телефоне): показать и спрятать через 2,5 с
+        this.onPlusClick = () => {
+          if (!this.showTooltip()) return;
+          clearTimeout(this.tooltipTimer);
+          this.tooltipTimer = setTimeout(() => this.hideTooltip(), 2500);
+        };
+        this.plusButton.addEventListener('mouseenter', this.onPlusEnter);
+        this.plusButton.addEventListener('focus', this.onPlusEnter);
+        this.plusButton.addEventListener('mouseleave', this.onPlusLeave);
+        this.plusButton.addEventListener('blur', this.onPlusLeave);
+        this.plusButton.addEventListener('click', this.onPlusClick);
+      }
+
+      teardownTooltip() {
+        clearTimeout(this.tooltipTimer);
+        if (!this.plusButton || !this.tooltip) return;
+        this.plusButton.removeEventListener('mouseenter', this.onPlusEnter);
+        this.plusButton.removeEventListener('focus', this.onPlusEnter);
+        this.plusButton.removeEventListener('mouseleave', this.onPlusLeave);
+        this.plusButton.removeEventListener('blur', this.onPlusLeave);
+        this.plusButton.removeEventListener('click', this.onPlusClick);
+        this.tooltip.remove();
+        this.tooltipHost.classList.remove('min-order-progress__tooltip-host');
+      }
+
+      showTooltip() {
+        if (!this.tooltip || !this.stockText) return false;
+        this.tooltip.textContent = this.stockText;
+        this.tooltip.hidden = false;
+        return true;
+      }
+
+      hideTooltip() {
+        if (this.tooltip) this.tooltip.hidden = true;
       }
 
       // Недоступный вариант — visibility: hidden через модификатор, место под блок остаётся

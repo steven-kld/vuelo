@@ -65,6 +65,30 @@ min-order-progress .min-order-progress__text {
   }
 }
 
+/* Подсказка у «+», когда остаток склада исчерпан; absolute — вёрстку не двигает */
+.min-order-progress__tooltip-host {
+  position: relative;
+}
+
+.min-order-progress__tooltip {
+  position: absolute;
+  bottom: calc(100% + 0.6rem);
+  left: 0;
+  z-index: 3;
+  width: max-content;
+  max-width: min(28rem, calc(100vw - 3rem));
+  padding: 0.6rem 1rem;
+  border-radius: 0.6rem;
+  background: rgb(var(--color-foreground));
+  color: rgb(var(--color-background));
+  line-height: 1.4;
+  pointer-events: none;
+}
+
+.min-order-progress__tooltip[hidden] {
+  display: none;
+}
+
 .min-order-progress--cart {
   margin: 1.2rem 0;
 }
