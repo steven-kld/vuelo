@@ -194,6 +194,7 @@
     },
     "multirow_qcfJCc": {
       "type": "multirow",
+      "disabled": true,
       "blocks": {
         "row_HJHeDw": {
           "type": "row",
@@ -260,6 +261,63 @@
         "mobile_content_alignment": "left",
         "section_color_scheme": "scheme-1",
         "row_color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "multicolumn_espacios": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_espacio_negocios": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/9776453.jpg",
+            "title": "Para negocios y locales",
+            "text": "<p>Hoteles, restaurantes y boutiques con una presencia elegante y duradera.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_espacio_oficinas": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/68468.png",
+            "title": "Para oficinas",
+            "text": "<p>Recepciones, salas de reuniones y clínicas más acogedoras.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_espacio_hogar": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/3773.png",
+            "title": "Para el hogar",
+            "text": "<p>Para quienes trabajan en casa o crean con las manos.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_espacio_negocios",
+        "column_espacio_oficinas",
+        "column_espacio_hogar"
+      ],
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "title": "Para cada espacio",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -698,6 +756,7 @@
     "1780058827aa4ae367",
     "1780068513491070b0",
     "multirow_qcfJCc",
+    "multicolumn_espacios",
     "blocks_QYngTB",
     "image_banner_R8tzHC",
     "featured_collection_ntDHrg",
